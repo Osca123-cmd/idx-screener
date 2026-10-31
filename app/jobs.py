@@ -33,11 +33,44 @@ def market_now() -> datetime:
     return datetime.now(JAKARTA)
 
 
+def pid_alive(pid: int) -> bool:
+    if pid <= 0:
+        return False
+    if os.name == "nt":
+        # os.kill(pid, 0) would *terminate* the process on Windows, so ask the kernel instead.
+        import ctypes
+
+        k32 = ctypes.windll.kernel32
+        handle = k32.OpenProcess(0x1000, False, pid)  # PROCESS_QUERY_LIMITED_INFORMATION
+        if not handle:
+            return False
+        code = ctypes.c_ulong()
+        ok = k32.GetExitCodeProcess(handle, ctypes.byref(code))
+        k32.CloseHandle(handle)
+        return bool(ok) and code.value == 259  # STILL_ACTIVE
+    try:
+        os.kill(pid, 0)
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+    return True
+
+
+def _lock_is_stale(lock: Path, max_age_hours: float) -> bool:
+    if time.time() - lock.stat().st_mtime > max_age_hours * 3600:
+        return True
+    try:
+        return not pid_alive(int(lock.read_text().strip() or 0))
+    except (OSError, ValueError):
+        return True
+
+
 @contextmanager
 def scan_lock(db_path: str, max_age_hours: float = 2):
     lock = Path(db_path).with_suffix(".lock")
-    if lock.exists() and time.time() - lock.stat().st_mtime > max_age_hours * 3600:
-        lock.unlink(missing_ok=True)  # left behind by a crashed run
+    if lock.exists() and _lock_is_stale(lock, max_age_hours):
+        lock.unlink(missing_ok=True)  # left behind by a killed or crashed run
     try:
         fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
     except FileExistsError:
@@ -162,6 +195,8 @@ def daily_scan(cfg=None, source=None, fund_source=None, tickers: list[str] | Non
     PROGRESS.update(running=True, stage="Mulai", done=0, total=0, error=None)
     try:
         with scan_lock(cfg.database):
+            # holding the lock means no other scan is alive: any 'running' row was killed mid-way
+            store.fail_orphaned_scans(conn, "Proses scan terhenti sebelum selesai")
             scan_id = store.create_scan(conn)
             PROGRESS["scan_id"] = scan_id
             try:
@@ -256,9 +291,16 @@ def weekly_fundamentals(cfg=None, fund_source=None) -> int:
         conn.close()
 
 
+def _log_to_file(path: str) -> None:
+    """Under pythonw (scheduled runs) there is no console: send stdout/stderr and logging to a file."""
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    stream = open(path, "a", encoding="utf-8", buffering=1)
+    sys.stdout = sys.stderr = stream
+
+
 def main(argv: list[str] | None = None) -> int:
-    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     p = argparse.ArgumentParser(prog="python -m app.jobs")
+    p.add_argument("--log", help="append all output to this file (for scheduled runs under pythonw)")
     sub = p.add_subparsers(dest="cmd", required=True)
     scan = sub.add_parser("daily_scan")
     scan.add_argument("--tickers", help="comma separated, e.g. BBCA,TLKM (default: whole universe)")
@@ -267,6 +309,9 @@ def main(argv: list[str] | None = None) -> int:
     bt = sub.add_parser("backtest")
     bt.add_argument("--tickers", help="comma separated (default: tickers in the latest scan)")
     args = p.parse_args(argv)
+    if args.log:
+        _log_to_file(args.log)
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s", stream=sys.stderr)
 
     t0 = time.time()
     if args.cmd == "daily_scan":
@@ -285,5 +330,13 @@ def main(argv: list[str] | None = None) -> int:
     return 0
 
 
+def entrypoint() -> int:
+    try:
+        return main()
+    except Exception:
+        log.exception("job failed")  # lands in the --log file when run headless
+        return 1
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(entrypoint())

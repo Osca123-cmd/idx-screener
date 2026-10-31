@@ -6,13 +6,15 @@
 # Times are local PC time; set them for WIB (the PC is assumed to be on Asia/Jakarta).
 
 $root = Split-Path -Parent $PSScriptRoot
-$python = Join-Path $root ".venv\Scripts\python.exe"
+# pythonw has no console window, so a scheduled run cannot be closed by accident mid-scan.
+$python = Join-Path $root ".venv\Scripts\pythonw.exe"
 $logDir = Join-Path $root "logs"
 New-Item -ItemType Directory -Force $logDir | Out-Null
 
 function Register-Job($name, $jobArgs, $trigger) {
-    $cmd = "/c cd /d `"$root`" && `"$python`" -m app.jobs $jobArgs >> `"$logDir\$($jobArgs.Split(' ')[0]).log`" 2>&1"
-    $action = New-ScheduledTaskAction -Execute "cmd.exe" -Argument $cmd -WorkingDirectory $root
+    $logFile = Join-Path $logDir "$($jobArgs.Split(' ')[0]).log"
+    $cmd = "-m app.jobs --log `"$logFile`" $jobArgs"
+    $action = New-ScheduledTaskAction -Execute $python -Argument $cmd -WorkingDirectory $root
     $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopIfGoingOnBatteries -AllowStartIfOnBatteries `
         -ExecutionTimeLimit (New-TimeSpan -Hours 1)
     Register-ScheduledTask -TaskName $name -Action $action -Trigger $trigger -Settings $settings -Force | Out-Null

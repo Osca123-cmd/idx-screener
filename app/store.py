@@ -136,6 +136,14 @@ def create_scan(conn: sqlite3.Connection) -> int:
     return cur.lastrowid
 
 
+def fail_orphaned_scans(conn: sqlite3.Connection, note: str) -> int:
+    cur = conn.execute(
+        "UPDATE scans SET status='failed', finished_at=?, note=? WHERE status='running'", (now(), note)
+    )
+    conn.commit()
+    return cur.rowcount
+
+
 def finish_scan(conn: sqlite3.Connection, scan_id: int, **fields) -> None:
     fields.setdefault("finished_at", now())
     cols = ", ".join(f"{k}=?" for k in fields)

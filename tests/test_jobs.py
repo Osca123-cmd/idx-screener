@@ -163,3 +163,46 @@ def test_fundamentals_due():
     assert jobs.fundamentals_due(fresh, ["A", "B", "C", "D", "E"], now)          # most tickers missing
     old = {k: {"fetched_at": "2026-10-01T10:00:00"} for k in "AB"}
     assert jobs.fundamentals_due(old, ["A", "B"], now)
+
+
+def test_lock_left_by_dead_process_is_reclaimed(cfg):
+    from pathlib import Path
+    lock = Path(cfg.database).with_suffix(".lock")
+    lock.parent.mkdir(parents=True, exist_ok=True)
+    lock.write_text("999999")  # no such pid
+    with jobs.scan_lock(cfg.database):
+        pass
+    assert not lock.exists()
+
+
+def test_lock_held_by_live_process_blocks(cfg):
+    import os
+    from pathlib import Path
+    lock = Path(cfg.database).with_suffix(".lock")
+    lock.parent.mkdir(parents=True, exist_ok=True)
+    lock.write_text(str(os.getpid()))
+    with pytest.raises(jobs.ScanLocked):
+        with jobs.scan_lock(cfg.database):
+            pass
+    lock.unlink()
+
+
+def test_orphaned_running_scan_marked_failed(cfg):
+    conn = store.connect(cfg.database)
+    orphan = store.create_scan(conn)
+    run(cfg)
+    s = store.get_scan(conn, orphan)
+    assert s["status"] == "failed" and "terhenti" in s["note"]
+
+
+def test_log_flag_writes_file(tmp_path, monkeypatch):
+    import sys
+    log = tmp_path / "logs" / "x.log"
+    monkeypatch.setattr(jobs, "weekly_fundamentals", lambda: 7)
+    old = sys.stdout, sys.stderr
+    try:
+        jobs.main(["--log", str(log), "weekly_fundamentals"])
+    finally:
+        sys.stdout.flush()
+        sys.stdout, sys.stderr = old
+    assert "fundamentals updated for 7 tickers" in log.read_text(encoding="utf-8")
