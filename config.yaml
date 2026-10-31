@@ -1,0 +1,60 @@
+# Semua ambang screener. Ubah di sini, tidak perlu mengubah kode.
+
+database: data/screener.db
+universe: data/universe.csv
+timezone: Asia/Jakarta
+
+history:
+  initial_period: 2y        # run pertama ambil 2 tahun
+  min_bars: 200             # minimal bar untuk diskor
+
+market:
+  close_cutoff: "16:15"     # sebelum jam ini (WIB) bar hari ini dianggap belum close
+  stale_trading_days: 3     # tidak ada bar dalam N hari bursa terakhir -> stale
+
+filters:
+  min_avg_value_idr: 5_000_000_000   # rata-rata nilai transaksi 20 hari
+  min_price: 50
+
+scoring:
+  rsi_low: 50
+  rsi_high: 70
+  volume_spike_mult: 2.0
+  breakout_lookback: 20
+  obv_lookback: 10
+  rr_full: 1.5
+  rr_half: 1.0
+
+structure:
+  fractal: 2                # swing point = high/low tertinggi di +-N bar
+  impulse_atr_mult: 2.0     # impuls naik minimal 2x ATR
+  zone_lookback: 120        # cari demand zone di N bar terakhir
+
+setup:
+  wide_zone_atr: 1.5        # zona > 1.5 ATR dianggap lebar
+  narrow_zone_atr: 1.0      # zona < 1 ATR dianggap sempit
+  entry_depth: 0.65         # kedalaman entry di zona lebar (0 = tepi atas, 1 = tepi bawah)
+  scale_in: [0.30, 0.40, 0.30]
+  sl_buffer_atr: 0.5
+  sl_buffer_narrow_atr: 1.0
+  breakout_zone_atr: 0.5
+  tp2_rr: 2.0
+
+valuation:
+  under: 0.75
+  over: 1.25
+  per_max: 100
+  history_min_snapshots: 26
+  history_low_pct: 20
+  history_high_pct: 80
+
+backtest:
+  horizon_bars: 20
+  warmup_bars: 200
+  step: 1
+
+fetch:
+  retries: 3
+  backoff_seconds: 2
+  batch_size: 50
+  info_throttle_seconds: 0.4
