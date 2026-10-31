@@ -21,7 +21,7 @@ Buka http://localhost:8765.
 | `python -m app.jobs weekly_fundamentals` | refresh EPS/BVPS + simpan snapshot valuasi mingguan |
 | `python -m app.jobs backtest` | replay mesin skor 2 tahun, hasil di halaman Backtest |
 | `python scripts/build_universe.py` | perbarui daftar emiten (IPO baru) |
-| `powershell -ExecutionPolicy Bypass -File scripts\register_task.ps1` | jadwalkan scan 16:30 WIB hari kerja + fundamental Sabtu 08:00 |
+| `powershell -ExecutionPolicy Bypass -File scripts\register_task.ps1` | jadwalkan scan 16:30 WIB hari kerja + fundamental Sabtu 08:00 (jalan tanpa jendela lewat `pythonw`, log di `logs/`) |
 
 ## Sumber data
 
