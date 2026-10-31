@@ -26,7 +26,8 @@ scoring:
   rr_half: 1.0
 
 structure:
-  fractal: 2                # swing point = high/low tertinggi di +-N bar
+  fractal: 2                # swing minor (+-N bar): break of structure untuk demand zone
+  major_fractal: 5          # swing mayor: verdict trend HH/HL dan resistance untuk TP
   impulse_atr_mult: 2.0     # impuls naik minimal 2x ATR
   zone_lookback: 120        # cari demand zone di N bar terakhir
 
@@ -39,6 +40,7 @@ setup:
   sl_buffer_narrow_atr: 1.0
   breakout_zone_atr: 0.5
   tp2_rr: 2.0
+  max_risk_pct: 8.0         # SL lebih jauh dari ini -> flag sl_far
 
 valuation:
   under: 0.75

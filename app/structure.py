@@ -183,11 +183,14 @@ def resistance_levels(df: pd.DataFrame, highs: list[Swing], above: float, lookba
 
 
 def analyze_structure(df: pd.DataFrame, cfg) -> dict:
+    """Minor swings (small fractal) mark the breaks that create demand zones;
+    major swings decide the trend and the resistance levels used for TPs."""
     s = cfg.structure
-    highs, lows = swing_points(df, s.fractal)
+    minor_highs, _ = swing_points(df, s.fractal)
+    highs, lows = swing_points(df, s.major_fractal)
     return {
         "highs": highs,
         "lows": lows,
         "trend": trend_verdict(df, highs, lows),
-        "zones": demand_zones(df, highs, s.fractal, s.impulse_atr_mult, s.zone_lookback),
+        "zones": demand_zones(df, minor_highs, s.fractal, s.impulse_atr_mult, s.zone_lookback),
     }

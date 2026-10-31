@@ -76,6 +76,8 @@ def analyze(df: pd.DataFrame, cfg) -> dict:
     items.append(_item("room", f"Ruang naik (R:R ke TP1 ≥ {sc.rr_full:g})", 10, room, f"R:R {rr:.2f}" if setup else "-"))
     if setup:
         flags += setup["plan"]["flags"]
+        if trend["verdict"] == "TURUN":
+            flags.append("counter_trend")
 
     score = sum(i["points"] for i in items)
     return {

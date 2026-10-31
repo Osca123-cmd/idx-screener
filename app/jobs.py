@@ -117,6 +117,15 @@ def refresh_fundamentals(conn, fund_source, tickers: list[str]) -> int:
     return len(funds)
 
 
+def fundamentals_due(funds: dict[str, dict], symbols: list[str], now: datetime, max_age_days: int = 7) -> bool:
+    """Refresh when most of the universe has no data yet or the newest fetch is older than a week."""
+    have = [funds[t] for t in symbols if t in funds]
+    if len(have) < len(symbols) / 2:
+        return True
+    newest = max(datetime.fromisoformat(f["fetched_at"]) for f in have)
+    return now.replace(tzinfo=None) - newest > timedelta(days=max_age_days)
+
+
 def build_result(stock: universe.Stock, analysis: dict, val: dict) -> dict:
     setup = analysis["setup"]
     plan = setup["plan"] if setup else {}
@@ -177,7 +186,7 @@ def _run_scan(conn, cfg, source, fund_source, tickers, now, scan_id, force=False
     for t, why in failed.items():
         store.add_error(conn, scan_id, t, "fetch", why)
 
-    if not store.all_fundamentals(conn):
+    if fundamentals_due(store.all_fundamentals(conn), symbols, now):
         try:
             refresh_fundamentals(conn, fund_source, symbols)
         except Exception as e:

@@ -149,3 +149,13 @@ def ohlc(rows):
 ])
 def test_watch_status(rows, expected):
     assert watch.status(PLAN, ohlc(rows))["status"] == expected
+
+
+def test_fundamentals_due():
+    now = datetime(2026, 10, 30, 17, 0, tzinfo=JKT)
+    fresh = {"A": {"fetched_at": "2026-10-29T10:00:00"}, "B": {"fetched_at": "2026-10-29T10:00:00"}}
+    assert jobs.fundamentals_due({}, ["A", "B"], now)
+    assert not jobs.fundamentals_due(fresh, ["A", "B"], now)
+    assert jobs.fundamentals_due(fresh, ["A", "B", "C", "D", "E"], now)          # most tickers missing
+    old = {k: {"fetched_at": "2026-10-01T10:00:00"} for k in "AB"}
+    assert jobs.fundamentals_due(old, ["A", "B"], now)

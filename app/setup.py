@@ -56,6 +56,8 @@ def build_plan(df: pd.DataFrame, highs: list[Swing], zone_low: float, zone_high:
     rr = (tp1 - entry) / risk
     if rr < cfg.scoring.rr_half:
         flags.append("room_tight")
+    if risk / entry * 100 > s.max_risk_pct:
+        flags.append("sl_far")
     return {
         "zone_low": round_to_tick(zone_low, "down"), "zone_high": round_to_tick(zone_high, "up"),
         "entry": entry, "sl": sl, "tp1": tp1, "tp1_kind": tp1_kind, "tp2": tp2, "tp2_kind": tp2_kind,
