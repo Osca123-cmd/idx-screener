@@ -83,3 +83,11 @@ def test_resistance_levels_nearest_first_and_round():
     assert not any(x.kind == "round" for x in lv)  # 1100 is within 1.5% of 1090 -> merged away
     above_all = st.resistance_levels(df, highs, above=1095)
     assert [(x.kind, x.price) for x in above_all] == [("round", 1100)]
+
+
+def test_zone_records_base_date():
+    df = bars(demand_scenario())
+    highs, _ = st.swing_points(df, 2)
+    z = st.demand_zones(df, highs, 2, 2.0, 120)[0]
+    assert z.base_date == df.index[42].strftime("%Y-%m-%d")
+    assert z.formed_date == df.index[44].strftime("%Y-%m-%d")

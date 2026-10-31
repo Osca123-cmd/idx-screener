@@ -33,6 +33,14 @@ def test_scan_lifecycle(conn):
     assert store.score_history(conn, "AAAA") == [{"scan_date": "2026-10-30", "score": 80, "trend": None, "setup_type": None}]
 
 
+def test_score_history_one_row_per_session(conn):
+    for score in (50, 60):
+        sid = store.create_scan(conn)
+        store.save_results(conn, sid, [{"ticker": "AAAA", "score": score}])
+        store.finish_scan(conn, sid, status="done", scan_date="2026-10-30")
+    assert [h["score"] for h in store.score_history(conn, "AAAA")] == [60]
+
+
 def test_running_scan_not_latest_done(conn):
     store.create_scan(conn)
     assert store.latest_scan(conn) is None

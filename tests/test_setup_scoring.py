@@ -92,3 +92,18 @@ def test_filters(cfg):
     assert scoring.passes_filters(short, cfg)[0] is False
     cheap = ind.add_all(frame(np.full(250, 40.0), volume=1e9))
     assert "harga" in scoring.passes_filters(cheap, cfg)[1]
+
+
+def test_breakout_bar_is_not_a_pullback(cfg):
+    from tests.test_structure import bars, demand_scenario
+    # cut right after the impulse bar: its own low sits in the zone but that is not a retest
+    df = bars(demand_scenario()[:45])
+    from app.structure import Zone
+    struct = {"trend": {"checks": {"above_ema200": True, "ema_stack_up": True}}, "highs": [],
+              "zones": [Zone(980, 1020, 44, "x", "x", 1045, 0, True)]}
+    res = setup_mod.find_setup(df, struct, cfg)
+    assert res is None or res["type"] != setup_mod.PULLBACK
+    # one bar later price dips back into the zone -> pullback
+    df2 = bars(demand_scenario()[:45] + [(1060, 1062, 1015, 1030)])
+    res2 = setup_mod.find_setup(df2, struct, cfg)
+    assert res2["type"] == setup_mod.PULLBACK

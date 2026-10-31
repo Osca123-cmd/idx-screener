@@ -44,8 +44,8 @@
     <td class="n">{{ r.tp1 | price }}</td>
     <td class="n muted">{{ r.tp2 | price }}</td>
     <td class="n">{{ r.rr | num }}</td>
-    <td><span class="val {{ r.valuation_label }}" title="{{ r.valuation_reason }}">{{ r.valuation_label }}</span></td>
-    <td><div class="flags">{% for f in r.flags %}{% set ft = flag(f) %}<span class="flag" title="{{ ft[1] }}">{{ ft[0] }}</span>{% endfor %}</div></td>
+    <td><span class="val {{ r.valuation_label }}" title="{{ r.valuation_reason }}">{{ {'Data tidak tersedia': 'Tanpa data'}.get(r.valuation_label, r.valuation_label) }}</span></td>
+    <td><div class="flags">{% for f in r.flags[:2] %}{% set ft = flag(f) %}<span class="flag" title="{{ ft[1] }}">{{ ft[0] }}</span>{% endfor %}{% if r.flags | length > 2 %}<span class="flag more" title="{% for f in r.flags[2:] %}{{ flag(f)[0] }}{% if not loop.last %}, {% endif %}{% endfor %}">+{{ r.flags | length - 2 }}</span>{% endif %}</div></td>
   </tr>
   {% endfor %}
   </tbody>

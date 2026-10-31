@@ -75,14 +75,15 @@ def find_setup(df: pd.DataFrame, struct: dict, cfg) -> dict | None:
     atr = float(df["atr14"].iloc[-1])
 
     if uptrend:
-        recent_low = df["low"].iloc[-3:]
         for z in valid:
-            if (recent_low <= z.high).any() and close >= z.low:
+            # a pullback is a return to the zone after the impulse that created it
+            recent_low = df["low"].iloc[max(z.formed_pos + 1, len(df) - 3):]
+            if len(recent_low) and (recent_low <= z.high).any() and close >= z.low:
                 plan = build_plan(df, highs, z.low, z.high, cfg)
                 if plan:
                     plan["flags"] += [f"retest_{z.retests}"] if z.retests > 1 else []
                     return {"type": PULLBACK, "triggered": True, "zone": z.to_dict(), "plan": plan,
-                            "detail": f"Harga masuk demand zone {z.low:.0f}–{z.high:.0f} (terbentuk {z.formed_date})"}
+                            "detail": f"Harga kembali ke demand zone {z.low:.0f}–{z.high:.0f} (basis {z.base_date}, break {z.formed_date})"}
 
     lb = cfg.scoring.breakout_lookback
     if len(df) > lb + 1:

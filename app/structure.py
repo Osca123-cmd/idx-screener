@@ -24,6 +24,7 @@ class Zone:
     high: float
     formed_pos: int
     formed_date: str
+    base_date: str
     break_level: float
     retests: int
     valid: bool
@@ -131,7 +132,8 @@ def demand_zones(df: pd.DataFrame, highs: list[Swing], n: int = 2, impulse_atr_m
             z_high = float(h[base_candle])
         valid = bool((c[b + 1:] >= z_low).all())
         zones.append(Zone(
-            low=z_low, high=z_high, formed_pos=b, formed_date=_date(df, b), break_level=sh.price,
+            low=z_low, high=z_high, formed_pos=b, formed_date=_date(df, b),
+            base_date=_date(df, min(base_candle, base_pos)), break_level=sh.price,
             retests=_count_retests(lo, z_high, b + 1), valid=valid,
         ))
         used_swings.add(sh.pos)

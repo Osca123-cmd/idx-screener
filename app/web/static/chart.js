@@ -31,10 +31,10 @@
     vol.setData(d.volume.map((b) => ({ time: b.time, value: b.value, color: b.up ? v("--jade-soft") : v("--crimson-soft") })));
     e20.setData(d.ema20); e50.setData(d.ema50); e200.setData(d.ema200);
 
-    // Demand zones: shaded band from the bar that formed them to the last bar.
+    // Demand zones: shaded band from their base candle to the last bar.
     const last = d.candles[d.candles.length - 1].time;
     zones.forEach((z) => {
-      const from = d.candles.find((c) => c.time >= z.formed_date);
+      const from = d.candles.find((c) => c.time >= (z.base_date || z.formed_date));
       if (!from) return;
       const band = chart.addBaselineSeries({
         baseValue: { type: "price", price: z.low },

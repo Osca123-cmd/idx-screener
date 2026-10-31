@@ -92,8 +92,9 @@ table.board { width: 100%; border-collapse: collapse; min-width: 1080px; }
 .val.Undervalue { color: var(--jade); border-color: var(--jade); }
 .val.Overvalue { color: var(--crimson); border-color: var(--crimson); }
 .val.Wajar { color: var(--ink); }
-.flags { display: flex; gap: 4px; flex-wrap: wrap; max-width: 220px; white-space: normal; }
-.flag { font-size: 11px; padding: 1px 6px; border-radius: 3px; background: var(--amber-soft); color: var(--amber); font-weight: 600; }
+.flags { display: flex; gap: 4px; flex-wrap: nowrap; }
+.flag { font-size: 11px; padding: 1px 6px; border-radius: 3px; background: var(--amber-soft); color: var(--amber); font-weight: 600; white-space: nowrap; }
+.flag.more { background: transparent; border: 1px solid var(--amber-soft); }
 
 /* SIGNATURE: tangga harga — SL, zona, entry, harga sekarang, TP1, TP2 on one rail */
 .ladder { position: relative; width: 150px; height: 24px; }

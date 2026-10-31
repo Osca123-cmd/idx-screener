@@ -199,7 +199,8 @@ def scan_errors(conn: sqlite3.Connection, scan_id: int) -> list[dict]:
 def score_history(conn: sqlite3.Connection, ticker: str, limit: int = 30) -> list[dict]:
     rows = conn.execute(
         """SELECT s.scan_date, r.score, r.trend, r.setup_type FROM scan_results r
-           JOIN scans s ON s.id = r.scan_id WHERE r.ticker=? AND s.status='done'
+           JOIN scans s ON s.id = r.scan_id
+           WHERE r.ticker=? AND s.id IN (SELECT MAX(id) FROM scans WHERE status='done' GROUP BY scan_date)
            ORDER BY s.id DESC LIMIT ?""",
         (ticker, limit),
     )
