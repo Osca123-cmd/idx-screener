@@ -17,6 +17,8 @@ app = FastAPI(title="IDX Screener")
 app.mount("/static", StaticFiles(directory=HERE / "static"), name="static")
 templates = Jinja2Templates(directory=HERE / "templates")
 fmt.register(templates.env)
+# cache-busting suffix for /static assets, changes whenever a static file changes
+templates.env.globals["static_v"] = int(max(f.stat().st_mtime for f in (HERE / "static").rglob("*") if f.is_file()))
 
 BACKTEST_STATE = {"running": False, "error": None}
 

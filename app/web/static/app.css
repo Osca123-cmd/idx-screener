@@ -7,6 +7,7 @@
   --rule: #cdd5cc;
   --jade: #0e7a5c;
   --jade-soft: rgba(14, 122, 92, .16);
+  --jade-zone: rgba(14, 122, 92, .32);
   --crimson: #c12a3c;
   --crimson-soft: rgba(193, 42, 60, .12);
   --amber: #a86f06;
@@ -19,7 +20,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --paper: #0f1714; --panel: #16201c; --ink: #e4ece6; --muted: #8fa198; --rule: #2a3832;
-    --jade: #3fbf95; --jade-soft: rgba(63, 191, 149, .18); --crimson: #f0606f; --crimson-soft: rgba(240, 96, 111, .15);
+    --jade: #3fbf95; --jade-soft: rgba(63, 191, 149, .18); --jade-zone: rgba(63, 191, 149, .34); --crimson: #f0606f; --crimson-soft: rgba(240, 96, 111, .15);
     --amber: #e2aa3c; --amber-soft: rgba(226, 170, 60, .16);
     color-scheme: dark;
   }

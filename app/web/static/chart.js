@@ -36,9 +36,12 @@
     zones.forEach((z) => {
       const from = d.candles.find((c) => c.time >= (z.base_date || z.formed_date));
       if (!from) return;
+      // The zone the plan trades from gets a stronger fill and a visible top edge.
+      const isPlan = z.low <= plan.entry && plan.entry <= z.high;
+      const fill = isPlan ? v("--jade-zone") : v("--jade-soft");
       const band = chart.addBaselineSeries({
         baseValue: { type: "price", price: z.low },
-        topFillColor1: v("--jade-soft"), topFillColor2: v("--jade-soft"), topLineColor: "transparent",
+        topFillColor1: fill, topFillColor2: fill, topLineColor: isPlan ? v("--jade") : "transparent", lineWidth: 1,
         bottomFillColor1: "transparent", bottomFillColor2: "transparent", bottomLineColor: "transparent",
         priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false,
       });
