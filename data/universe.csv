@@ -1,0 +1,842 @@
+ticker,name,sector,industry,is_financial
+AADI,Pt Adaro Andalan Indonesia Tbk,Energy Minerals,Coal,0
+AALI,PT Astra Agro Lestari Tbk,Process Industries,Agricultural Commodities/Milling,0
+ABDA,PT Asuransi Bina Dana Arta Tbk Class A,Finance,Property/Casualty Insurance,1
+ABMM,PT ABM Investama Tbk,Energy Minerals,Coal,0
+ACES,PT Aspirasi Hidup Indonesia Tbk,Retail Trade,Home Improvement Chains,0
+ACRO,PT Samcro Hyosung Adilestari Tbk Class A,Process Industries,Textiles,0
+ACST,PT Acset Indonusa Tbk,Industrial Services,Engineering & Construction,0
+ADES,PT Akasha Wira International Tbk,Consumer Non-Durables,Beverages: Non-Alcoholic,0
+ADMF,PT Adira Dinamika Multi Finance Tbk,Finance,Finance/Rental/Leasing,1
+ADMG,PT Polychem Indonesia Tbk,Process Industries,Textiles,0
+ADMR,PT Alamtri Minerals Indonesia Tbk,Energy Minerals,Coal,0
+ADRO,PT Alamtri Resources Indonesia Tbk,Energy Minerals,Coal,0
+AEGS,PT Anugerah Spareparts Sejahtera Tbk,Producer Manufacturing,Auto Parts: OEM,0
+AGAR,PT Asia Sejahtera Mina Tbk,Distribution Services,Food Distributors,0
+AGII,PT Samator Indo Gas Tbk,Process Industries,Chemicals: Specialty,0
+AGRO,PT Bank Raya Indonesia Tbk,Finance,Major Banks,1
+AGRS,PT Bank IBK Indonesia Tbk,Finance,Regional Banks,1
+AHAP,PT Asuransi Harta Aman Pratama Tbk,Finance,Multi-Line Insurance,1
+AIMS,PT Artha Mahiya Investama Tbk,Distribution Services,Medical Distributors,0
+AISA,PT FKS Food Sejahtera Tbk Class A,Consumer Non-Durables,Food: Specialty/Candy,0
+AKKU,PT Anugerah Kagum Karya Utama Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+AKPI,PT Argha Karya Prima Industry Tbk,Process Industries,Containers/Packaging,0
+AKRA,PT AKR Corporindo Tbk,Distribution Services,Wholesale Distributors,0
+AKSI,PT Mineral Sumberdaya Mandiri Tbk,Finance,Financial Conglomerates,1
+ALDO,PT Alkindo Naratama Tbk,Process Industries,Containers/Packaging,0
+ALII,PT Ancara Logistics Indonesia Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+ALKA,"PT Alakasa Industrindo, Tbk Class A",Non-Energy Minerals,Aluminum,0
+AMAG,PT Asuransi Multi Artha Guna Tbk,Finance,Property/Casualty Insurance,1
+AMAN,PT Makmur Berkah Amanda Tbk,Real Estate,Real Estate Development,0
+AMAR,PT Bank Amar Indonesia Tbk,Finance,Regional Banks,1
+AMFG,PT Asahimas Flat Glass Tbk,Process Industries,Industrial Specialties,0
+AMIN,PT Ateliers Mecaniques D'Indonesie Tbk,Producer Manufacturing,Industrial Machinery,0
+AMMN,PT Amman Mineral Internasional Tbk,Non-Energy Minerals,Precious Metals,0
+AMMS,PT Agung Menjangan Mas Tbk,Process Industries,Agricultural Commodities/Milling,0
+AMOR,PT Ashmore Asset Management Indonesia Tbk,Finance,Investment Managers,1
+AMRT,PT Sumber Alfaria Trijaya,Retail Trade,Food Retail,0
+ANDI,PT Andira Agro Tbk,Process Industries,Agricultural Commodities/Milling,0
+ANJT,PT Austindo Nusantara Jaya Tbk,Process Industries,Agricultural Commodities/Milling,0
+ANTM,PT ANTAM (Persero) Tbk,Non-Energy Minerals,Precious Metals,0
+APEX,PT Apexindo Pratama Duta Tbk,Industrial Services,Contract Drilling,0
+APIC,PT Pacific Strategic Financial Tbk Class A,Finance,Investment Banks/Brokers,1
+APII,PT Arita Prima Indonesia Tbk,Producer Manufacturing,Industrial Machinery,0
+APLI,PT Asiaplast Industries Tbk,Process Industries,Industrial Specialties,0
+APLN,PT Agung Podomoro Land Tbk,Real Estate,Real Estate Development,0
+ARCI,PT Archi Indonesia Tbk,Non-Energy Minerals,Precious Metals,0
+AREA,PT Dunia Virtual Online Tbk,Technology Services,Data Processing Services,0
+ARGO,PT Argo Pantes Tbk,Process Industries,Textiles,0
+ARII,PT Atlas Resources Tbk,Energy Minerals,Coal,0
+ARKO,PT Arkora Hydro Tbk,Industrial Services,Engineering & Construction,0
+ARNA,PT Arwana Citramulia Tbk,Producer Manufacturing,Building Products,0
+ARTA,PT Arthavest Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+ARTO,PT Bank Jago Tbk,Finance,Major Banks,1
+ASBI,PT Asuransi Bintang Tbk,Finance,Property/Casualty Insurance,1
+ASDM,PT Asuransi Dayin Mitra Tbk,Finance,Multi-Line Insurance,1
+ASGR,PT Astra Graphia Tbk,Technology Services,Data Processing Services,0
+ASHA,PT Cilacap Samudera Fishing Industry Tbk,Process Industries,Agricultural Commodities/Milling,0
+ASII,PT Astra International Tbk,Technology Services,Information Technology Services,0
+ASJT,PT Asuransi Jasa Tania Tbk,Finance,Multi-Line Insurance,1
+ASLC,PT Autopedia Sukses Lestari Tbk,Distribution Services,Wholesale Distributors,0
+ASLI,PT Asri Karya Lestari Tbk,Industrial Services,Engineering & Construction,0
+ASMI,PT Asuransi Maximus Graha Persada Tbk,Finance,Life/Health Insurance,1
+ASPI,PT Andalan Sakti Primaindo Tbk,Real Estate,Real Estate Development,0
+ASPR,PT Asia Pramulia Tbk,Producer Manufacturing,Miscellaneous Manufacturing,0
+ASRI,PT Alam Sutera Realty Tbk,Real Estate,Real Estate Development,0
+ASRM,PT Asuransi Ramayana Tbk,Finance,Property/Casualty Insurance,1
+ASSA,PT Adi Sarana Armada Tbk,Transportation,Other Transportation,0
+ATAP,PT Trimitra Prawara Goldland Tbk,Real Estate,Real Estate Development,0
+ATIC,PT Anabatic Technologies Tbk,Technology Services,Information Technology Services,0
+ATLA,PT Atlantis Subsea Indonesia Tbk,Industrial Services,Engineering & Construction,0
+AUTO,PT Astra Otoparts Tbk,Producer Manufacturing,Auto Parts: OEM,0
+AVIA,PT Avia Avian Tbk,Process Industries,Industrial Specialties,0
+AWAN,PT Era Digital Media Tbk,Technology Services,Internet Software/Services,0
+AXIO,PT Tera Data Indonusa Tbk,Electronic Technology,Computer Processing Hardware,0
+AYAM,PT Janu Putra Sejahtera Tbk,Process Industries,Agricultural Commodities/Milling,0
+AYLS,PT Arkayana Lestari Grup Tbk,Process Industries,Textiles,0
+BABP,PT Bank MNC Internasional Tbk,Finance,Regional Banks,1
+BABY,PT Multitrend Indo Tbk,Retail Trade,Apparel/Footwear Retail,0
+BACA,PT Bank Capital Indonesia Tbk,Finance,Regional Banks,1
+BACH,PT Bach Multi Global Tbk,Distribution Services,Wholesale Distributors,0
+BAIK,PT Bersama Mencapai Puncak Tbk,Consumer Services,Restaurants,0
+BAJA,PT Saranacentral Bajatama Tbk,Non-Energy Minerals,Steel,0
+BALI,PT Bali Towerindo Sentra Tbk,Industrial Services,Engineering & Construction,0
+BANK,PT Bank Aladin Syariah Tbk,Finance,Regional Banks,1
+BAPA,PT Bekasi Asri Pemula Tbk,Consumer Durables,Homebuilding,0
+BAPI,PT Bhakti Agung Propertindo Tbk,Real Estate,Real Estate Development,0
+BATR,PT Benteng Api Technic Tbk,Non-Energy Minerals,Construction Materials,0
+BAUT,PT Mitra Angkasa Sejahtera Tbk,Distribution Services,Wholesale Distributors,0
+BAYU,PT Bayu Buana Tbk,Consumer Services,Other Consumer Services,0
+BBCA,PT Bank Central Asia Tbk,Finance,Major Banks,1
+BBHI,PT Allo Bank Indonesia Tbk,Finance,Regional Banks,1
+BBKP,PT Bank KB Indonesia Tbk Class B,Finance,Major Banks,1
+BBLD,PT Buana Finance Tbk,Finance,Finance/Rental/Leasing,1
+BBMD,PT Bank Mestika Dharma Tbk,Finance,Major Banks,1
+BBNI,PT Bank Negara Indonesia (Persero) Tbk Class B,Finance,Major Banks,1
+BBRI,PT Bank Rakyat Indonesia (Persero) Tbk Class B,Finance,Regional Banks,1
+BBRM,PT Pelayaran Nasional Bina Buana Raya Tbk,Transportation,Marine Shipping,0
+BBSI,PT Krom Bank Indonesia Tbk,Finance,Regional Banks,1
+BBSS,PT Bumi Benowo Sukses Sejahtera Tbk,Industrial Services,Engineering & Construction,0
+BBTN,PT Bank Tabungan Negara (Persero) Tbk,Finance,Major Banks,1
+BBYB,PT Bank Neo Commerce Tbk,Finance,Major Banks,1
+BCAP,PT MNC Kapital Indonesia Tbk,Finance,Regional Banks,1
+BCIC,PT Bank JTrust Indonesia Tbk,Finance,Major Banks,1
+BCIP,PT Bumi Citra Permai Tbk,Real Estate,Real Estate Development,0
+BDKR,PT Berdikari Pondasi Perkasa Tbk,Industrial Services,Engineering & Construction,0
+BDMN,PT Bank Danamon Indonesia Tbk Class A,Finance,Major Banks,1
+BEEF,PT Estika Tata Tiara Tbk,Consumer Non-Durables,Food: Meat/Fish/Dairy,0
+BEER,PT Jobubu Jarum Minahasa Tbk,Consumer Non-Durables,Beverages: Alcoholic,0
+BEKS,PT Bank Pembangunan Daerah Banten (Perseroda) Tbk Class A,Finance,Regional Banks,1
+BELI,PT Global Digital Niaga Tbk,Retail Trade,Specialty Stores,0
+BELL,PT Trisula Textile Industries Tbk,Consumer Non-Durables,Apparel/Footwear,0
+BESS,PT Batulicin Nusantara Maritim Tbk,Transportation,Marine Shipping,0
+BEST,PT Bekasi Fajar Industrial Estate Tbk,Industrial Services,Engineering & Construction,0
+BFIN,PT BFI Finance Indonesia Tbk,Finance,Finance/Rental/Leasing,1
+BGTG,PT Bank Ganesha Tbk,Finance,Major Banks,1
+BHIT,PT MNC Asia Holding Tbk,Consumer Services,Movies/Entertainment,0
+BIKE,PT Bhineka Inovasi Ketahanan Energi Tbk,Distribution Services,Wholesale Distributors,0
+BINA,PT Bank Ina Perdana Tbk,Finance,Major Banks,1
+BINO,PT Perma Plasindo Tbk,Producer Manufacturing,Office Equipment/Supplies,0
+BIPI,PT Astrindo Nusantara Infrastruktur Tbk,Energy Minerals,Coal,0
+BIPP,PT Bhuwanatala Indah Permai Tbk Class A,Real Estate,Real Estate Development,0
+BIRD,PT Blue Bird Tbk,Transportation,Other Transportation,0
+BISI,PT BISI International Tbk,Process Industries,Agricultural Commodities/Milling,0
+BJBR,PT Bank Pembangunan Daerah Jawa Barat & Banten Tbk,Finance,Major Banks,1
+BJTM,PT Bank Pembangunan Daerah Jawa Timur Tbk Class B,Finance,Major Banks,1
+BKDP,PT Bukit Darmo Property Tbk,Real Estate,Real Estate Development,0
+BKSL,PT Sentul City Tbk,Real Estate,Real Estate Development,0
+BKSW,PT Bank QNB Indonesia Tbk,Finance,Major Banks,1
+BLES,PT Superior Prima Sukses Tbk,Non-Energy Minerals,Construction Materials,0
+BLOG,PT Trimitra Trans Persada Tbk,Transportation,Trucking,0
+BLTA,PT Berlian Laju Tanker Tbk,Transportation,Air Freight/Couriers,0
+BLTZ,PT Graha Layar Prima Tbk Class C,Consumer Services,Movies/Entertainment,0
+BLUE,PT Berkah Prima Perkasa Tbk,Distribution Services,Electronics Distributors,0
+BMAS,PT Bank Kasikorn Indonesia Tbk,Finance,Major Banks,1
+BMBL,PT Lavender Bina Cendikia Tbk,Commercial Services,Miscellaneous Commercial Services,0
+BMHS,PT Bundamedik Tbk,Health Services,Hospital/Nursing Management,0
+BMRI,PT Bank Mandiri (Persero) Tbk,Finance,Regional Banks,1
+BMSR,PT Bintang Mitra Semestaraya Tbk,Distribution Services,Wholesale Distributors,0
+BMTR,PT Global Mediacom Tbk,Consumer Services,Broadcasting,0
+BNBA,PT Bank Bumi Arta Tbk,Finance,Regional Banks,1
+BNBR,PT Bakrie & Brothers Tbk Class A,Industrial Services,Engineering & Construction,0
+BNGA,PT Bank CIMB Niaga Tbk Class A,Finance,Major Banks,1
+BNII,PT Bank Maybank Indonesia Tbk Class A,Finance,Major Banks,1
+BNLI,PT Bank Permata Tbk Class A,Finance,Regional Banks,1
+BOAT,PT Newport Marine Services Tbk,Transportation,Other Transportation,0
+BOBA,PT Formosa Ingredient Factory Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+BOGA,PT Apollo Global Interactive Tbk,Retail Trade,Specialty Stores,0
+BOLA,PT Bali Bintang Sejahtera Tbk,Consumer Services,Movies/Entertainment,0
+BOLT,PT Garuda Metalindo Tbk,Producer Manufacturing,Auto Parts: OEM,0
+BPFI,PT Woori Finance Indonesia Tbk,Finance,Finance/Rental/Leasing,1
+BPII,PT Batavia Prosperindo Internasional Tbk,Commercial Services,Miscellaneous Commercial Services,0
+BPTR,PT Batavia Prosperindo Trans Tbk,Finance,Finance/Rental/Leasing,1
+BRAM,PT Indo Kordsa Tbk,Process Industries,Textiles,0
+BREN,PT Barito Renewables Energy Tbk,Utilities,Electric Utilities,0
+BRIS,PT Bank Syariah Indonesia (Persero) Tbk,Finance,Major Banks,1
+BRMS,PT Bumi Resources Minerals Tbk Class A,Non-Energy Minerals,Precious Metals,0
+BRNA,PT Berlina Tbk,Process Industries,Containers/Packaging,0
+BRPT,PT Barito Pacific Tbk,Non-Energy Minerals,Forest Products,0
+BRRC,PT Raja Roti Cemerlang Tbk,Consumer Non-Durables,Food: Major Diversified,0
+BSBK,PT Wulandari Bangun Laksana Tbk,Real Estate,Real Estate Development,0
+BSDE,PT Bumi Serpong Damai Tbk,Real Estate,Real Estate Development,0
+BSIM,PT Bank Sinarmas Tbk,Finance,Major Banks,1
+BSML,PT Bintang Samudera Mandiri Lines Tbk,Transportation,Marine Shipping,0
+BSSR,PT Baramulti Suksessarana Tbk,Energy Minerals,Coal,0
+BSWD,PT Bank of India Indonesia Tbk,Finance,Major Banks,1
+BTEK,PT Bumi Teknokultura Unggul Tbk,Process Industries,Agricultural Commodities/Milling,0
+BTON,PT Betonjaya Manunggal Tbk,Non-Energy Minerals,Steel,0
+BTPN,PT Bank SMBC Indonesia Tbk,Finance,Major Banks,1
+BTPS,PT Bank BTPN Syariah Tbk,Finance,Major Banks,1
+BUAH,PT Segar Kumala Indonesia Tbk,Distribution Services,Food Distributors,0
+BUDI,PT Budi Starch & Sweetener Tbk,Process Industries,Agricultural Commodities/Milling,0
+BUKA,PT Bukalapak.com Tbk,Retail Trade,Internet Retail,0
+BUKK,PT Bukaka Teknik Utama Tbk,Producer Manufacturing,Electrical Products,0
+BULL,PT Buana Lintas Lautan Tbk,Transportation,Marine Shipping,0
+BUMI,PT Bumi Resources Tbk Class A,Non-Energy Minerals,Precious Metals,0
+BUVA,PT Bukit Uluwatu Villa Tbk,Consumer Services,Movies/Entertainment,0
+BVIC,PT Bank Victoria International Tbk,Finance,Regional Banks,1
+BWPT,PT Eagle High Plantations Tbk.,Process Industries,Agricultural Commodities/Milling,0
+BYAN,PT Bayan Resources Tbk,Energy Minerals,Coal,0
+CAKK,PT Cahayaputra Asa Keramik Tbk,Consumer Durables,Home Furnishings,0
+CAMP,PT Campina Ice Cream Industry Tbk,Consumer Non-Durables,Food: Meat/Fish/Dairy,0
+CARE,PT Metro Healthcare Indonesia Tbk,Health Services,Medical/Nursing Services,0
+CARS,PT Industri dan Perdagangan Bintraco Dharma Tbk,Retail Trade,Specialty Stores,0
+CASA,PT Capital Financial Indonesia Tbk,Finance,Life/Health Insurance,1
+CASH,PT.Cashlez Worldwide Indonesia Tbk,Technology Services,Packaged Software,0
+CASS,PT Cahaya Aero Services Tbk,Transportation,Other Transportation,0
+CBDK,PT Bangun Kosambi Sukses Tbk,Real Estate,Real Estate Development,0
+CBPE,PT Citra Buana Prasida Tbk,Real Estate,Real Estate Development,0
+CBRE,PT Cakra Buana Resources Energi Tbk,Transportation,Marine Shipping,0
+CBUT,PT Citra Borneo Utama Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+CCSI,PT Communication Cable Systems Indonesia Tbk,Producer Manufacturing,Electrical Products,0
+CDIA,PT Chandra Daya Investasi Tbk.,Utilities,Electric Utilities,0
+CEKA,PT Wilmar Cahaya Indonesia Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+CENT,PT Centratama Telekomunikasi Indonesia Tbk,Communications,Major Telecommunications,0
+CFIN,PT Clipan Finance Indonesia Tbk,Finance,Finance/Rental/Leasing,1
+CGAS,PT Citra Nusantara Gemilang Tbk,Utilities,Gas Distributors,0
+CHEK,PT Diastika Biotekindo Tbk,Health Technology,Medical Specialties,0
+CHEM,PT Chemstar Indonesia Tbk,Process Industries,Chemicals: Major Diversified,0
+CHIP,PT Pelita Teknologi Global Tbk,Technology Services,Packaged Software,0
+CINT,PT Chitose Internasional Tbk,Producer Manufacturing,Office Equipment/Supplies,0
+CITA,PT Cita Mineral Investindo Tbk,Consumer Durables,Home Furnishings,0
+CITY,PT Natura City Developments Tbk,Real Estate,Real Estate Development,0
+CLAY,PT Citra Putra Realty Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+CLEO,PT Sariguna Primatirta Tbk,Consumer Non-Durables,Beverages: Non-Alcoholic,0
+CLPI,PT Colorpak Indonesia Tbk,Process Industries,Industrial Specialties,0
+CMNP,PT Citra Marga Nusaphala Persada Tbk,Transportation,Other Transportation,0
+CMNT,PT Cemindo Gemilang Tbk,Non-Energy Minerals,Construction Materials,0
+CMRY,PT Cisarua Mountain Dairy Tbk,Distribution Services,Food Distributors,0
+CNMA,PT Nusantara Sejahtera Raya Tbk,Consumer Services,Movies/Entertainment,0
+COCO,PT Wahana Interfood Nusantara Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+COIN,PT Indokripto Koin Semesta Tbk,Miscellaneous,Miscellaneous,0
+CPIN,PT Charoen Pokphand Indonesia Tbk,Process Industries,Agricultural Commodities/Milling,0
+CPRO,PT Central Proteina Prima Tbk,Process Industries,Agricultural Commodities/Milling,0
+CRAB,PT Toba Surimi Industries Tbk,Consumer Non-Durables,Food: Meat/Fish/Dairy,0
+CRSN,PT Carsurin Tbk,Commercial Services,Miscellaneous Commercial Services,0
+CSAP,PT Catur Sentosa Adiprana Tbk,Distribution Services,Wholesale Distributors,0
+CSIS,PT Cahayasakti Investindo Sukses Tbk,Real Estate,Real Estate Development,0
+CSRA,PT Cisadane Sawit Raya Tbk,Process Industries,Agricultural Commodities/Milling,0
+CTBN,PT Citra Tubindo Tbk,Industrial Services,Oilfield Services/Equipment,0
+CTRA,PT Ciputra Development Tbk,Real Estate,Real Estate Development,0
+CTTH,PT Citatah Tbk,Non-Energy Minerals,Construction Materials,0
+CUAN,PT Petrindo Jaya Kreasi Tbk,Non-Energy Minerals,Other Metals/Minerals,0
+CYBR,PT ITSEC Asia Tbk,Technology Services,Information Technology Services,0
+DAAZ,PT Daaz Bara Lestari Tbk,Distribution Services,Wholesale Distributors,0
+DADA,PT Diamond Citra Propertindo Tbk,Real Estate,Real Estate Development,0
+DART,PT Duta Anggada Realty Tbk,Consumer Durables,Homebuilding,0
+DATA,PT Remala Abadi Tbk,Communications,Major Telecommunications,0
+DAYA,PT Duta Intidaya Tbk,Retail Trade,Drugstore Chains,0
+DCII,PT DCI Indonesia Tbk,Technology Services,Data Processing Services,0
+DEFI,PT Danasupra Erapacific Tbk,Finance,Finance/Rental/Leasing,1
+DEPO,PT Caturkarda Depo Bangunan Tbk,Retail Trade,Home Improvement Chains,0
+DEWA,PT Darma Henwa Tbk,Energy Minerals,Coal,0
+DEWI,PT Dewi Shri Farmindo Tbk,Retail Trade,Food Retail,0
+DFAM,PT Dafam Property Indonesia Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+DGIK,PT Nusa Konstruksi Enjiniring Tbk,Industrial Services,Engineering & Construction,0
+DGNS,PT Diagnos Laboratorium Utama Tbk,Health Services,Medical/Nursing Services,0
+DGWG,PT Delta Giri Wacana Tbk,Process Industries,Chemicals: Agricultural,0
+DILD,PT Intiland Development Tbk,Real Estate,Real Estate Development,0
+DIVA,PT Distribusi Voucher Nusantara Tbk,Technology Services,Packaged Software,0
+DKFT,PT Central Omega Resources Tbk,Non-Energy Minerals,Other Metals/Minerals,0
+DKHH,Pt Cipta Sarana Medika Tbk.,Health Services,Hospital/Nursing Management,0
+DLTA,PT Delta Djakarta Tbk,Consumer Non-Durables,Beverages: Alcoholic,0
+DMAS,PT Puradelta Lestari Tbk,Real Estate,Real Estate Development,0
+DMMX,PT Digital Mediatama Maxima Tbk,Commercial Services,Advertising/Marketing Services,0
+DMND,PT Diamond Food Indonesia Tbk,Consumer Non-Durables,Food: Meat/Fish/Dairy,0
+DNAR,PT Bank Oke Indonesia Tbk,Finance,Major Banks,1
+DNET,PT Indoritel Makmur Internasional Tbk,Communications,Wireless Telecommunications,0
+DOID,PT BUMA Internasional Grup Tbk,Energy Minerals,Coal,0
+DOOH,PT Era Media Sejahtera Tbk,Commercial Services,Advertising/Marketing Services,0
+DOSS,PT Global Sukses Digital Tbk,Retail Trade,Electronics/Appliance Stores,0
+DPUM,PT Dua Putra Utama Makmur Tbk,Distribution Services,Food Distributors,0
+DRMA,PT Dharma Polimetal Tbk,Producer Manufacturing,Auto Parts: OEM,0
+DSFI,PT Dharma Samudera Fishing Industries Tbk,Consumer Non-Durables,Food: Meat/Fish/Dairy,0
+DSNG,PT Dharma Satya Nusantara Tbk,Non-Energy Minerals,Forest Products,0
+DSSA,PT Dian Swastatika Sentosa Tbk,Energy Minerals,Coal,0
+DUTI,PT Duta Pertiwi Tbk,Real Estate,Real Estate Development,0
+DVLA,PT Darya-Varia Laboratoria Tbk,Health Technology,Pharmaceuticals: Major,0
+DWGL,PT Dwi Guna Laksana Tbk,Energy Minerals,Coal,0
+DYAN,PT Dyandra Media International Tbk,Commercial Services,Miscellaneous Commercial Services,0
+EAST,PT Eastparc Hotel Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+ECII,PT Electronic City Indonesia Tbk,Retail Trade,Electronics/Appliance Stores,0
+EKAD,PT Ekadharma International Tbk,Process Industries,Pulp & Paper,0
+ELIT,PT Data Sinergitama Jaya Tbk,Technology Services,Information Technology Services,0
+ELPI,PT Pelayaran Nasional Ekalya Purnamasari Tbk,Transportation,Air Freight/Couriers,0
+ELSA,PT Elnusa Tbk,Energy Minerals,Oil & Gas Production,0
+ELTY,PT Bakrieland Development Tbk Class A,Real Estate,Real Estate Development,0
+EMAS,PT Merdeka Gold Resources Tbk,Non-Energy Minerals,Precious Metals,0
+EMDE,PT Megapolitan Developments Tbk,Real Estate,Real Estate Development,0
+EMMI,PT ESA Medika Mandiri Tbk,Distribution Services,Medical Distributors,0
+EMTK,PT Elang Mahkota Teknologi Tbk,Consumer Services,Broadcasting,0
+ENAK,PT Champ Resto Indonesia Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+ENRG,PT Energi Mega Persada Tbk,Energy Minerals,Oil & Gas Production,0
+ENZO,PT Morenzo Abadi Perkasa Tbk,Consumer Non-Durables,Food: Meat/Fish/Dairy,0
+EPAC,PT Megalestari Epack Sentosaraya Tbk,Technology Services,Internet Software/Services,0
+EPMT,PT Enseval Putera Megatrading Tbk,Distribution Services,Medical Distributors,0
+ERAA,PT Erajaya Swasembada Tbk,Distribution Services,Electronics Distributors,0
+ERAL,PT Sinar Eka Selaras Tbk,Retail Trade,Electronics/Appliance Stores,0
+ERTX,PT Eratex Djaja Tbk,Process Industries,Textiles,0
+ESIP,PT Sinergi Inti Plastindo Tbk,Producer Manufacturing,Miscellaneous Manufacturing,0
+ESSA,PT ESSA Industries Indonesia Tbk,Energy Minerals,Oil Refining/Marketing,0
+ESTA,PT Esta Multi Usaha Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+ESTI,PT Ever Shine Textile Tbk,Process Industries,Textiles,0
+EURO,PT Estee Gold Feet Tbk,Consumer Non-Durables,Household/Personal Care,0
+EXCL,PT XLSMART Telecom Sejahtera Tbk,Communications,Major Telecommunications,0
+FAPA,PT FAP Agri Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+FAST,PT Fast Food Indonesia Tbk,Consumer Services,Restaurants,0
+FILM,PT MD Entertainment Tbk,Consumer Services,Movies/Entertainment,0
+FIRE,PT Alfa Energi Investama Tbk,Energy Minerals,Coal,0
+FISH,PT FKS Multi Agro Tbk,Consumer Non-Durables,Food: Meat/Fish/Dairy,0
+FITT,PT Fortune Resources Investment Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+FLMC,PT Falmaco Nonwoven Industri Tbk,Process Industries,Textiles,0
+FMII,PT Fortune Mate Indonesia Tbk,Real Estate,Real Estate Development,0
+FOLK,PT Multi Garam Utama Tbk,Distribution Services,Wholesale Distributors,0
+FORE,PT Fore Kopi Indonesia Tbk,Consumer Services,Restaurants,0
+FORU,PT Fortune Indonesia Tbk,Commercial Services,Advertising/Marketing Services,0
+FPNI,PT Lotte Chemical Titan Tbk,Process Industries,Chemicals: Specialty,0
+FUJI,PT Fuji Finance Indonesia Tbk.,Finance,Finance/Rental/Leasing,1
+FUTR,PT Futura Energi Global Tbk,Commercial Services,Advertising/Marketing Services,0
+FWCT,PT Wijaya Cahaya Timber Tbk,Non-Energy Minerals,Forest Products,0
+GDST,PT Gunawan Dianjaya Steel Tbk,Non-Energy Minerals,Steel,0
+GDYR,PT Goodyear Indonesia Tbk,Consumer Durables,Automotive Aftermarket,0
+GEMA,PT Gema Grahasarana Tbk,Producer Manufacturing,Office Equipment/Supplies,0
+GEMS,PT Golden Energy Mines Tbk,Energy Minerals,Coal,0
+GGRM,PT Gudang Garam Tbk,Consumer Non-Durables,Tobacco,0
+GGRP,PT Gunung Raja Paksi Tbk,Non-Energy Minerals,Steel,0
+GHON,PT Gihon Telekomunikasi Indonesia,Communications,Specialty Telecommunications,0
+GIAA,PT Garuda Indonesia (Persero) Tbk Class B,Transportation,Airlines,0
+GJTL,PT Gajah Tunggal Tbk,Consumer Durables,Automotive Aftermarket,0
+GLVA,PT Galva Technologies Tbk,Distribution Services,Electronics Distributors,0
+GMFI,PT Garuda Maintenance Facility Aero Asia Tbk,Transportation,Other Transportation,0
+GMTD,PT Gowa Makassar Tourism Development Tbk,Real Estate,Real Estate Development,0
+GOLD,PT Visi Telekomunikasi Infrastruktur Tbk,Finance,Finance/Rental/Leasing,1
+GOLF,PT Intra Golflink Resorts Tbk,Commercial Services,Miscellaneous Commercial Services,0
+GOOD,PT Garudafood Putra Putri Jaya Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+GOTO,PT GoTo Gojek Tokopedia Tbk,Technology Services,Packaged Software,0
+GPRA,PT Perdana Gapuraprima Tbk,Consumer Durables,Homebuilding,0
+GPSO,PT Geoprima Solusi Tbk,Technology Services,Information Technology Services,0
+GRIA,PT Ingria Pratama Capitalindo Tbk,Real Estate,Real Estate Development,0
+GRPH,PT Griptha Putra Persada Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+GRPM,PT Graha Prima Mentari Tbk,Distribution Services,Food Distributors,0
+GSMF,PT Equity Development Investment Tbk Class A,Finance,Property/Casualty Insurance,1
+GTBO,PT Garda Tujuh Buana Tbk,Energy Minerals,Coal,0
+GTRA,PT Grahaprima Suksesmandiri Tbk,Transportation,Trucking,0
+GTSI,PT GTS Internasional,Transportation,Air Freight/Couriers,0
+GULA,PT Aman Agrindo Tbk,Process Industries,Agricultural Commodities/Milling,0
+GUNA,PT Gunanusa Eramandiri Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+GWSA,PT Greenwood Sejahtera Tbk,Real Estate,Real Estate Development,0
+GZCO,PT Gozco Plantations Tbk,Process Industries,Agricultural Commodities/Milling,0
+HADE,PT Himalaya Energi Perkasa Tbk,Distribution Services,Wholesale Distributors,0
+HAIS,PT Hasnur Internasional Shipping Tbk,Transportation,Marine Shipping,0
+HAJJ,PT Arsy Buana Travelindo Tbk,Consumer Services,Other Consumer Services,0
+HALO,PT Haloni Jane Tbk,Producer Manufacturing,Miscellaneous Manufacturing,0
+HATM,PT Habco Trans Maritima Tbk,Transportation,Marine Shipping,0
+HBAT,PT Minahasa Membangun Hebat Tbk,Real Estate,Real Estate Development,0
+HDFA,PT Radana Bhaskara Finance Tbk,Finance,Finance/Rental/Leasing,1
+HDIT,PT Hensel Davest Indonesia Tbk,Commercial Services,Miscellaneous Commercial Services,0
+HEAL,PT Medikaloka Hermina Tbk,Health Services,Hospital/Nursing Management,0
+HELI,PT Jaya Trishindo Tbk,Transportation,Airlines,0
+HERO,PT DFI Retail Nusantara Tbk,Retail Trade,Drugstore Chains,0
+HEXA,PT Hexindo Adiperkasa Tbk,Distribution Services,Wholesale Distributors,0
+HGII,PT Hero Global Investment Tbk,Utilities,Electric Utilities,0
+HMSP,PT Hanjaya Mandala Sampoerna Tbk,Consumer Non-Durables,Tobacco,0
+HOKI,PT Buyung Poetra Sembada Tbk,Process Industries,Agricultural Commodities/Milling,0
+HOMI,PT Grand House Mulia Tbk,Real Estate,Real Estate Development,0
+HOPE,PT Harapan Duta Pertiwi Tbk,Producer Manufacturing,Trucks/Construction/Farm Machinery,0
+HRME,PT Menteng Heritage Realty Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+HRTA,PT Hartadinata Abadi Tbk,Consumer Durables,Other Consumer Specialties,0
+HRUM,PT Harum Energy Tbk,Energy Minerals,Coal,0
+HUMI,PT Humpuss Maritim Internasional Tbk,Transportation,Other Transportation,0
+HYGN,PT Ecocare Indo Pasifik Tbk,Commercial Services,Miscellaneous Commercial Services,0
+IATA,PT Karya Pacific Energy Tbk,Distribution Services,Wholesale Distributors,0
+IBOS,PT Indo Boga Sukses Tbk,Consumer Services,Restaurants,0
+ICBP,PT Indofood CBP Sukses Makmur Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+ICON,PT Island Concepts Indonesia Tbk,Consumer Services,Restaurants,0
+IDEA,PT Idea Indonesia Akademi Tbk,Commercial Services,Miscellaneous Commercial Services,0
+IDPR,PT Indonesia Pondasi Raya Tbk,Industrial Services,Engineering & Construction,0
+IFII,PT Indonesia Fibreboard Industry Tbk,Non-Energy Minerals,Forest Products,0
+IFSH,PT Ifishdeco Tbk,Non-Energy Minerals,Other Metals/Minerals,0
+IKAI,PT Intikeramik Alamasri Industri Tbk,Producer Manufacturing,Building Products,0
+IKAN,PT Era Mandiri Cemerlang Tbk,Consumer Non-Durables,Food: Meat/Fish/Dairy,0
+IKBI,PT Sumi Indo Kabel Tbk,Electronic Technology,Telecommunications Equipment,0
+IKPM,PT Ikapharmindo Putramas Tbk,Health Technology,Pharmaceuticals: Major,0
+IMAS,PT Indomobil Sukses Internasional Tbk,Consumer Durables,Motor Vehicles,0
+IMJS,PT Indomobil Multi Jasa Tbk,Finance,Finance/Rental/Leasing,1
+IMPC,PT Impack Pratama Industri Tbk,Producer Manufacturing,Miscellaneous Manufacturing,0
+INAI,PT Indal Aluminium Industry Tbk,Non-Energy Minerals,Aluminum,0
+INCI,PT Intanwijaya Internasional Tbk,Process Industries,Chemicals: Specialty,0
+INCO,PT Vale Indonesia Tbk,Non-Energy Minerals,Other Metals/Minerals,0
+INDF,PT Indofood Sukses Makmur Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+INDO,PT Royalindo Investa Wijaya Tbk,Finance,Regional Banks,1
+INDR,PT Indo-Rama Synthetics Tbk,Process Industries,Textiles,0
+INDS,PT Indospring Tbk,Producer Manufacturing,Auto Parts: OEM,0
+INDY,PT Indika Energy Tbk,Energy Minerals,Coal,0
+INET,PT Sinergi Inti Andalan Prima Tbk,Communications,Specialty Telecommunications,0
+INKP,PT Indah Kiat Pulp & Paper Tbk,Process Industries,Pulp & Paper,0
+INOV,PT Inocycle Technology Group Tbk,Process Industries,Textiles,0
+INPC,PT Bank Artha Graha Internasional Tbk,Finance,Regional Banks,1
+INPP,PT Indonesian Paradise Property Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+INTD,PT Inter-Delta Tbk,Consumer Durables,Electronics/Appliances,0
+INTP,PT Indocement Tunggal Prakarsa Tbk,Non-Energy Minerals,Construction Materials,0
+IOTF,PT Sumber Sinergi Makmur Tbk,Distribution Services,Electronics Distributors,0
+IPCC,PT Indonesia Kendaraan Terminal Tbk,Transportation,Marine Shipping,0
+IPCM,PT Jasa Armada Indonesia Tbk,Transportation,Other Transportation,0
+IPOL,PT Indopoly Swakarsa Industry Tbk,Process Industries,Containers/Packaging,0
+IPTV,PT MNC Vision Networks Tbk Class A,Consumer Services,Cable/Satellite TV,0
+IRRA,PT Itama Ranoraya Tbk,Distribution Services,Medical Distributors,0
+IRSX,PT Folago Global Nusantara Tbk,Technology Services,Packaged Software,0
+ISAP,PT Isra Presisi Indonesia Tbk,Producer Manufacturing,Industrial Machinery,0
+ISAT,PT Indosat Tbk Class B,Communications,Wireless Telecommunications,0
+ISEA,PT Indo American Seafoods Tbk,Consumer Non-Durables,Food: Meat/Fish/Dairy,0
+ISSP,PT Steel Pipe Industry of Indonesia Tbk,Non-Energy Minerals,Steel,0
+ITIC,PT Indonesian Tobacco Tbk,Consumer Non-Durables,Tobacco,0
+ITMA,PT Sumber Energi Andalan Tbk,Energy Minerals,Coal,0
+ITMG,PT Indo Tambangraya Megah Tbk,Energy Minerals,Coal,0
+JARR,PT Jhonlin Agro Raya Tbk,Process Industries,Agricultural Commodities/Milling,0
+JAST,PT Jasnita Telekomindo Tbk,Communications,Specialty Telecommunications,0
+JATI,PT Informasi Teknologi Indonesia Tbk,Technology Services,Information Technology Services,0
+JAWA,PT Jaya Agra Wattie Tbk,Process Industries,Agricultural Commodities/Milling,0
+JAYA,PT Armada Berjaya Trans Tbk,Transportation,Trucking,0
+JECC,PT Jembo Cable Co. Tbk,Producer Manufacturing,Electrical Products,0
+JECX,PT Nitrasanata Dharma Tbk,Health Services,Medical/Nursing Services,0
+JELI,PT Niramas Utama Tbk,Consumer Non-Durables,Food: Major Diversified,0
+JGLE,PT Graha Andrasentra Propertindo Tbk,Real Estate,Real Estate Development,0
+JIHD,PT Jakarta International Hotels & Development Tbk,Real Estate,Real Estate Development,0
+JKON,PT Jaya Konstruksi Manggala Pratama Tbk,Industrial Services,Engineering & Construction,0
+JPFA,PT Japfa Comfeed Indonesia Tbk Class A,Process Industries,Agricultural Commodities/Milling,0
+JRPT,PT Jaya Real Property Tbk,Real Estate,Real Estate Development,0
+JSMR,PT Jasa Marga (Persero) Tbk Class B,Transportation,Other Transportation,0
+JSPT,PT Jakarta Setiabudi Internasional Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+JTPE,PT Jasuindo Tiga Perkasa Tbk,Commercial Services,Commercial Printing/Forms,0
+KAEF,PT Kimia Farma (Persero) Tbk Class B,Health Technology,Pharmaceuticals: Major,0
+KAQI,PT Jantra Grupo Indonesia Tbk,Consumer Services,Other Consumer Services,0
+KBAG,PT Karya Bersama Anugerah Tbk,Real Estate,Real Estate Development,0
+KBLI,PT KMI Wire & Cable Tbk Class A,Producer Manufacturing,Electrical Products,0
+KBLM,PT Kabelindo Murni Tbk Class A,Producer Manufacturing,Electrical Products,0
+KBLV,PT First Media Tbk,Consumer Services,Cable/Satellite TV,0
+KDSI,PT Kedawung Setia Industrial Tbk,Process Industries,Containers/Packaging,0
+KDTN,PT Puri Sentul Permai Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+KEEN,PT Kencana Energi Lestari Tbk,Utilities,Electric Utilities,0
+KEJU,PT Mulia Boga Raya Tbk,Consumer Non-Durables,Food: Meat/Fish/Dairy,0
+KETR,PT Ketrosden Triasmitra Tbk,Industrial Services,Engineering & Construction,0
+KICI,PT Kedaung Indah Can Tbk,Consumer Durables,Home Furnishings,0
+KIJA,PT Kawasan Industri Jababeka Tbk Class A,Real Estate,Real Estate Development,0
+KING,PT Hoffmen Cleanindo Tbk,Commercial Services,Miscellaneous Commercial Services,0
+KINO,PT Kino Indonesia Tbk,Consumer Non-Durables,Household/Personal Care,0
+KIOS,PT Kioson Komersial Indonesia Tbk,Retail Trade,Department Stores,0
+KJEN,PT Krida Jaringan Nusantara Tbk,Transportation,Air Freight/Couriers,0
+KKES,PT Kusuma Kemindo Sentosa Tbk,Distribution Services,Wholesale Distributors,0
+KKGI,PT Resource Alam Indonesia Tbk,Energy Minerals,Coal,0
+KLAS,PT Pelayaran Kurnia Lautan Semesta Tbk,Transportation,Marine Shipping,0
+KLBF,PT Kalbe Farma Tbk,Health Technology,Pharmaceuticals: Major,0
+KLIN,PT Klinko Karya Imaji Tbk,Consumer Non-Durables,Household/Personal Care,0
+KMDS,PT Kurniamitra Duta Sentosa Tbk,Distribution Services,Food Distributors,0
+KMTR,PT Kirana Megatara Tbk,Producer Manufacturing,Miscellaneous Manufacturing,0
+KOBX,PT Kobexindo Tractors Tbk,Distribution Services,Wholesale Distributors,0
+KOCI,PT Kokoh Exa Nusantara Tbk,Real Estate,Real Estate Development,0
+KOKA,PT Koka Indonesia Tbk,Industrial Services,Engineering & Construction,0
+KONI,PT Perdana Bangun Pusaka Tbk,Retail Trade,Electronics/Appliance Stores,0
+KOPI,PT Mitra Energi Persada Tbk,Distribution Services,Wholesale Distributors,0
+KOTA,PT DMS Propertindo Tbk,Real Estate,Real Estate Development,0
+KPIG,PT MNC Tourism Indonesia Tbk,Real Estate,Real Estate Development,0
+KRAS,PT Krakatau Steel (Persero) Tbk Class B,Non-Energy Minerals,Steel,0
+KREN,PT Quantum Clovera Investama Tbk,Finance,Investment Banks/Brokers,1
+KRYA,PT Bangun Karya Perkasa Jaya Tbk,Producer Manufacturing,Building Products,0
+KSIX,PT Kentanix Supra International Tbk,Consumer Durables,Homebuilding,0
+KUAS,PT Ace Oldfields Tbk,Producer Manufacturing,Miscellaneous Manufacturing,0
+LABA,PT Green Power Group Tbk,Non-Energy Minerals,Steel,0
+LABS,PT UBC Medical Indonesia Tbk,Distribution Services,Medical Distributors,0
+LAJU,PT Jasa Berdikari Logistics Tbk,Transportation,Air Freight/Couriers,0
+LAND,PT Trimitra Propertindo Tbk,Consumer Durables,Homebuilding,0
+LAPD,PT Leyand International Tbk,Utilities,Electric Utilities,0
+LEAD,PT Logindo Samudramakmur Tbk,Industrial Services,Oilfield Services/Equipment,0
+LFLO,PT Imago Mulia Persada Tbk,Commercial Services,Miscellaneous Commercial Services,0
+LIFE,PT MSIG Life Insurance Indonesia Tbk,Finance,Life/Health Insurance,1
+LINK,PT Link Net Tbk,Communications,Major Telecommunications,0
+LION,PT Lion Metal Works Tbk,Producer Manufacturing,Office Equipment/Supplies,0
+LIVE,PT Homeco Victoria Makmur Tbk,Distribution Services,Wholesale Distributors,0
+LMAX,PT Lupromax Pelumas Indonesia Tbk,Process Industries,Industrial Specialties,0
+LMPI,PT Langgeng Makmur Industri Tbk,Consumer Durables,Home Furnishings,0
+LOPI,PT Logisticsplus International Tbk,Transportation,Air Freight/Couriers,0
+LPCK,PT Lippo Cikarang Tbk,Real Estate,Real Estate Development,0
+LPGI,PT Lippo General Insurance Tbk,Finance,Multi-Line Insurance,1
+LPIN,PT Multi Prima Sejahtera Tbk,Electronic Technology,Electronic Components,0
+LPKR,PT Lippo Karawaci Tbk,Real Estate,Real Estate Development,0
+LPLI,PT Star Pacific Tbk Class A,Technology Services,Internet Software/Services,0
+LPPF,PT MDS Retailing Tbk Class A,Retail Trade,Department Stores,0
+LPPS,PT Lenox Pasifik InvestamaTbk Class A,Finance,Investment Managers,1
+LRNA,PT Eka Sari Lorena Transport Tbk,Transportation,Other Transportation,0
+LSIP,PT Perusahaan Perkebunan London Sumatra Indonesia Tbk,Process Industries,Agricultural Commodities/Milling,0
+LTLS,PT Lautan Luas Tbk,Distribution Services,Wholesale Distributors,0
+LUCK,PT Sentral Mitra Informatika Tbk,Distribution Services,Electronics Distributors,0
+LUCY,PT Lima Dua Lima Tiga Tbk,Commercial Services,Miscellaneous Commercial Services,0
+MAHA,PT Mandiri Herindo Adiperkasa Tbk,Energy Minerals,Coal,0
+MAIN,PT Malindo Feedmill Tbk,Process Industries,Agricultural Commodities/Milling,0
+MANG,PT Manggung Polahraya Tbk,Consumer Durables,Homebuilding,0
+MAPA,PT MAP Aktif Adiperkasa Tbk,Retail Trade,Specialty Stores,0
+MAPB,PT Map Boga Adiperkasa Tbk,Consumer Services,Restaurants,0
+MAPI,PT Mitra Adiperkasa Tbk,Retail Trade,Department Stores,0
+MARK,PT Mark Dynamics Indonesia Tbk,Non-Energy Minerals,Other Metals/Minerals,0
+MASB,PT Bank Multiarta Sentosa Tbk,Finance,Regional Banks,1
+MAXI,PT Maxindo Karya Anugerah Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+MAYA,PT Bank Mayapada Internasional Tbk Class A,Finance,Regional Banks,1
+MBAP,PT Mitrabara Adiperdana Tbk,Energy Minerals,Coal,0
+MBMA,PT Merdeka Battery Materials Tbk,Non-Energy Minerals,Other Metals/Minerals,0
+MBSS,PT Mitrabahtera Segara Sejati Tbk,Transportation,Other Transportation,0
+MBTO,PT Martina Berto Tbk,Consumer Non-Durables,Household/Personal Care,0
+MCAS,PT M Cash Integrasi Tbk,Technology Services,Information Technology Services,0
+MCOL,PT Prima Andalan Mandiri Tbk,Energy Minerals,Coal,0
+MCOR,PT Bank China Construction Bank Indonesia Tbk,Finance,Major Banks,1
+MDIA,PT Intermedia Capital Tbk,Consumer Services,Broadcasting,0
+MDIY,PT Daya Intiguna Yasa Tbk,Retail Trade,Electronics/Appliance Stores,0
+MDKA,PT Merdeka Copper Gold Tbk,Non-Energy Minerals,Precious Metals,0
+MDKI,PT Emdeki Utama Tbk,Process Industries,Chemicals: Specialty,0
+MDLA,PT Medela Potentia Tbk,Distribution Services,Medical Distributors,0
+MDLN,PT Modernland Realty Tbk Class A,Real Estate,Real Estate Development,0
+MEDC,PT Medco Energi Internasional Tbk,Energy Minerals,Oil & Gas Production,0
+MEDS,PT Hetzer Medical Indonesia Tbk,Health Technology,Medical Specialties,0
+MEGA,PT Bank Mega Tbk,Finance,Regional Banks,1
+MEJA,PT Harta Djaya Karya Tbk,Commercial Services,Miscellaneous Commercial Services,0
+MERI,PT Merry Riana Edukasi Tbk,Commercial Services,Miscellaneous Commercial Services,0
+MERK,PT Merck Tbk,Health Technology,Pharmaceuticals: Major,0
+MGLV,PT NexAI Digital Infrastruktur Tbk.,Consumer Durables,Home Furnishings,0
+MGNA,PT Magna Investama Mandiri Tbk,Finance,Finance/Rental/Leasing,1
+MGRO,PT Mahkota Group Tbk,Process Industries,Agricultural Commodities/Milling,0
+MHKI,PT Multi Hanna Kreasindo Tbk,Industrial Services,Environmental Services,0
+MICE,PT Multi Indocitra Tbk,Distribution Services,Medical Distributors,0
+MIDI,PT Midi Utama Indonesia Tbk,Retail Trade,Food Retail,0
+MIKA,PT Mitra Keluarga Karyasehat Tbk,Health Services,Hospital/Nursing Management,0
+MINA,PT Sanurhasta Mitra Tbk.,Consumer Services,Hotels/Resorts/Cruise lines,0
+MINE,PT Sinar Terang Mandiri TBK,Non-Energy Minerals,Precious Metals,0
+MIRA,PT Mitra International Resources Tbk,Industrial Services,Oilfield Services/Equipment,0
+MITI,PT Mitra Investindo Tbk Class A,Transportation,Marine Shipping,0
+MKAP,PT Multikarya Asia Pasifik Raya Tbk,Producer Manufacturing,Industrial Machinery,0
+MKNT,Pt Mitra Komunikasi Nusantara Tbk,Distribution Services,Electronics Distributors,0
+MKPI,PT Metropolitan Kentjana Tbk,Real Estate,Real Estate Development,0
+MKTR,PT Menthobi Karyatama Raya Tbk,Commercial Services,Miscellaneous Commercial Services,0
+MLBI,PT Multi Bintang Indonesia Tbk,Consumer Non-Durables,Beverages: Alcoholic,0
+MLIA,PT Mulia Industrindo Tbk,Process Industries,Industrial Specialties,0
+MLPL,PT Multipolar Tbk Class A,Retail Trade,Department Stores,0
+MLPT,PT Multipolar Technology Tbk,Technology Services,Information Technology Services,0
+MMIX,PT Multi Medika Internasional Tbk,Distribution Services,Medical Distributors,0
+MMLP,PT Mega Manunggal Property Tbk,Real Estate,Real Estate Development,0
+MNCN,PT Media Nusantara Citra Tbk,Commercial Services,Commercial Printing/Forms,0
+MOLI,PT Madusari Murni Indah Tbk,Process Industries,Chemicals: Specialty,0
+MORA,PT Ekamas Mora Republik Tbk,Communications,Specialty Telecommunications,0
+MPIX,PT Mitra Pedagang Indonesia Tbk,Commercial Services,Miscellaneous Commercial Services,0
+MPMX,PT Mitra Pinasthika Mustika Tbk,Distribution Services,Wholesale Distributors,0
+MPOW,PT Megapower Makmur Tbk,Utilities,Electric Utilities,0
+MPPA,PT Matahari Putra Prima Tbk,Retail Trade,Department Stores,0
+MPRO,PT Maha Properti Indonesia Tbk,Real Estate,Real Estate Development,0
+MPXL,PT MPX Logistics International Tbk,Transportation,Air Freight/Couriers,0
+MRAT,PT Mustika Ratu Tbk,Distribution Services,Medical Distributors,0
+MSIE,PT Multisarana Intan Eduka Tbk,Real Estate,Real Estate Development,0
+MSIN,PT MNC Digital Entertainment Tbk,Consumer Services,Movies/Entertainment,0
+MSJA,PT Multi Spunindo Jaya Tbk,Process Industries,Textiles,0
+MSKY,PT MNC Vision Network,Communications,Specialty Telecommunications,0
+MSTI,PT Mastersystem Infotama Tbk,Technology Services,Information Technology Services,0
+MTDL,PT Metrodata Electronics Tbk,Electronic Technology,Computer Peripherals,0
+MTEL,PT Dayamitra Telekomunikasi Tbk,Communications,Specialty Telecommunications,0
+MTLA,PT Metropolitan Land Tbk,Real Estate,Real Estate Development,0
+MTMH,PT Murni Sadar Tbk,Health Services,Medical/Nursing Services,0
+MTWI,PT Malacca Trust Wuwungan Insurance Tbk,Finance,Multi-Line Insurance,1
+MUTU,PT Mutuagung Lestari Tbk,Commercial Services,Miscellaneous Commercial Services,0
+MYOH,PT Samindo Resources Tbk,Energy Minerals,Coal,0
+MYOR,PT Mayora Indah Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+NAIK,PT Adiwarna Anugerah Abadi Tbk,Commercial Services,Miscellaneous Commercial Services,0
+NANO,PT Nanotech Indonesia Global Tbk,Commercial Services,Miscellaneous Commercial Services,0
+NASA,PT Andalan Perkasa Abadi Tbk,Real Estate,Real Estate Development,0
+NASI,PT Wahana Inti Makmur Tbk,Consumer Non-Durables,Food: Major Diversified,0
+NATO,PT Olympus Strategic Indonesia Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+NAYZ,PT Hassana Boga Sejahtera Tbk,Consumer Non-Durables,Food: Major Diversified,0
+NCKL,PT Trimegah Bangun Persada Tbk,Non-Energy Minerals,Other Metals/Minerals,0
+NELY,PT Pelayaran Nelly Dwi Putri Tbk,Transportation,Marine Shipping,0
+NEST,PT Esta Indonesia Tbk,Process Industries,Agricultural Commodities/Milling,0
+NETV,PT MDTV Media Technologies Tbk,Commercial Services,Advertising/Marketing Services,0
+NFCX,PT NFC Indonesia Tbk,Technology Services,Internet Software/Services,0
+NICE,PT Adhi Kartiko Pratama Tbk,Non-Energy Minerals,Other Metals/Minerals,0
+NICK,PT Charnic Capital Tbk,Finance,Financial Conglomerates,1
+NICL,PT PAM Mineral Tbk,Non-Energy Minerals,Precious Metals,0
+NIKL,PT Pelat Timah Nusantara Tbk,Process Industries,Containers/Packaging,0
+NINE,PT Techno9 Indonesia Tbk,Technology Services,Information Technology Services,0
+NIRO,PT City Retail Developments Tbk,Real Estate,Real Estate Development,0
+NISP,PT Bank OCBC NISP Tbk,Finance,Major Banks,1
+NOBU,PT Bank Nationalnobu Tbk,Finance,Major Banks,1
+NPGF,PT Nusa Palapa Gemilang Tbk,Process Industries,Chemicals: Agricultural,0
+NRCA,PT Nusa Raya Cipta Tbk,Industrial Services,Engineering & Construction,0
+NSSS,PT Nusantara Sawit Sejahtera Tbk,Process Industries,Agricultural Commodities/Milling,0
+NTBK,PT Nusatama Berkah Tbk,Consumer Durables,Motor Vehicles,0
+NZIA,PT Nusantara Almazia Tbk,Real Estate,Real Estate Development,0
+OASA,PT Maharaksa Biru Energi Tbk,Commercial Services,Miscellaneous Commercial Services,0
+OBAT,PT Brigit Biofarmaka Teknologi Tbk,Producer Manufacturing,Industrial Conglomerates,0
+OBMD,PT OBM Drilchem Tbk,Process Industries,Chemicals: Major Diversified,0
+OILS,PT Indo Oil Perkasa Tbk,Process Industries,Agricultural Commodities/Milling,0
+OKAS,PT Ancora Indonesia Resources Tbk,Non-Energy Minerals,Precious Metals,0
+OLIV,PT Atlas Nexus Group Tbk,Consumer Durables,Home Furnishings,0
+OMED,PT Jayamas Medica Industri Tbk,Health Technology,Medical Specialties,0
+OMRE,PT Indonesia Prima Property Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+OPMS,PT Optima Prima Metal Sinergi Tbk,Distribution Services,Wholesale Distributors,0
+PACK,PT Abadi Nusantara Hijau Investama Tbk,Process Industries,Containers/Packaging,0
+PADA,PT Personel Alih Daya Tbk,Commercial Services,Miscellaneous Commercial Services,0
+PADI,PT Minna Padi Investama Sekuritas Tbk,Finance,Investment Banks/Brokers,1
+PALM,PT Provident Investasi Bersama Tbk,Process Industries,Agricultural Commodities/Milling,0
+PAMG,PT Bima Sakti Pertiwi Tbk,Real Estate,Real Estate Development,0
+PANI,PT Pantai Indah Kapuk Dua Tbk,Consumer Non-Durables,Food: Meat/Fish/Dairy,0
+PANR,PT Panorama Sentrawisata Tbk,Consumer Services,Other Consumer Services,0
+PANS,PT Panin Sekuritas Tbk,Finance,Investment Banks/Brokers,1
+PART,PT Cipta Perdana Lancar Tbk,Producer Manufacturing,Auto Parts: OEM,0
+PBID,PT Panca Budi Idaman Tbk,Process Industries,Containers/Packaging,0
+PBRX,PT Pan Brothers Tbk,Process Industries,Textiles,0
+PBSA,PT Paramita Bangun Sarana Tbk,Industrial Services,Engineering & Construction,0
+PCAR,PT Prima Cakrawala Abadi Tbk,Consumer Non-Durables,Food: Meat/Fish/Dairy,0
+PDES,PT Destinasi Tirta Nusantara Tbk,Consumer Services,Other Consumer Services,0
+PDPP,PT Primadaya Plastisindo Tbk,Process Industries,Containers/Packaging,0
+PEGE,PT Panca Global Kapital Tbk,Finance,Investment Banks/Brokers,1
+PEHA,PT Phapros Tbk,Distribution Services,Medical Distributors,0
+PEVE,PT Penta Valent Tbk,Distribution Services,Medical Distributors,0
+PGAS,PT Perusahaan Gas Negara (Persero) Tbk Class B,Energy Minerals,Integrated Oil,0
+PGEO,PT Pertamina Geothermal Energy Tbk,Utilities,Alternative Power Generation,0
+PGJO,PT Bahtera Bumi Raya Tbk,Technology Services,Packaged Software,0
+PGLI,PT Pembangunan Graha Lestari Indah Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+PGUN,PT Pradiksi Gunatama Tbk,Process Industries,Agricultural Commodities/Milling,0
+PICO,PT Pelangi Indah Canindo Tbk,Process Industries,Containers/Packaging,0
+PIPA,PT Oxala Energy International Tbk,Non-Energy Minerals,Construction Materials,0
+PJAA,PT Pembangunan Jaya Ancol Tbk,Consumer Services,Movies/Entertainment,0
+PJHB,PT Pelayaran Jaya Hidup Baru,Transportation,Marine Shipping,0
+PKPK,PT Paragon Karya Perkasa Tbk,Industrial Services,Engineering & Construction,0
+PLAN,PT Planet Properindo Jaya Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+PMJS,PT Putra Mandiri Jembar Tbk,Retail Trade,Specialty Stores,0
+PMUI,PT Prima Multi Usaha Indonesia Tbk,Distribution Services,Electronics Distributors,0
+PNBN,PT Bank Pan Indonesia Tbk,Finance,Regional Banks,1
+PNBS,PT Bank Panin Dubai Syariah Tbk,Finance,Major Banks,1
+PNGO,PT AEP Pinago Plantations Tbk,Process Industries,Agricultural Commodities/Milling,0
+PNIN,PT Paninvest Tbk,Consumer Services,Other Consumer Services,0
+PNLF,PT Panin Financial Tbk,Commercial Services,Miscellaneous Commercial Services,0
+PNSE,PT Pudjiadi & Sons Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+POLA,PT Pool Advista Finance Tbk,Finance,Finance/Rental/Leasing,1
+POLI,PT Pollux Hotels Group Tbk,Consumer Durables,Homebuilding,0
+POLU,PT Golden Flower Tbk,Consumer Non-Durables,Apparel/Footwear,0
+PORT,PT Nusantara Pelabuhan Handal Tbk,Transportation,Other Transportation,0
+POWR,PT Cikarang Listrindo Tbk,Utilities,Electric Utilities,0
+PPRE,PT PP Presisi Tbk,Industrial Services,Engineering & Construction,0
+PPRI,PT Paperocks Indonesia Tbk,Distribution Services,Wholesale Distributors,0
+PPRO,PT PP Properti Tbk,Real Estate,Real Estate Development,0
+PRAY,PT Famon Awal Bros Sedaya Tbk,Health Services,Hospital/Nursing Management,0
+PRDA,PT Prodia Widyahusada Tbk,Health Services,Medical/Nursing Services,0
+PRDL,PT Prodia Diagnostic Line Tbk,Health Technology,Medical Specialties,0
+PRIM,PT Royal Prima Tbk,Health Services,Hospital/Nursing Management,0
+PSAB,PT J Resources Asia Pasifik Tbk,Non-Energy Minerals,Precious Metals,0
+PSAT,PT Pancaran Samudera Transport Tbk,Transportation,Other Transportation,0
+PSDN,PT Prasidha Aneka Niaga Tbk,Process Industries,Agricultural Commodities/Milling,0
+PSGO,PT Palma Serasih Tbk.,Consumer Non-Durables,Food: Specialty/Candy,0
+PSKT,PT Red Planet Indonesia Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+PSSI,PT IMC Pelita Logistik Tbk,Transportation,Marine Shipping,0
+PTBA,PT Bukit Asam (Persero) Tbk,Energy Minerals,Coal,0
+PTIS,PT Indo Straits Tbk,Transportation,Other Transportation,0
+PTMP,PT Mitra Pack Tbk,Distribution Services,Wholesale Distributors,0
+PTPS,PT Pulau Subur Tbk,Process Industries,Agricultural Commodities/Milling,0
+PTPW,PT Pratama Widya Tbk,Industrial Services,Engineering & Construction,0
+PTRO,PT Petrosea Tbk,Industrial Services,Engineering & Construction,0
+PTSN,PT Sat Nusapersada Tbk,Electronic Technology,Electronic Production Equipment,0
+PTSP,PT Pioneerindo Gourmet International Tbk,Consumer Services,Restaurants,0
+PUDP,PT Pudjiadi Prestige Tbk Class A,Real Estate,Real Estate Development,0
+PURA,PT Putra Rajawali Kencana Tbk,Transportation,Air Freight/Couriers,0
+PURI,PT Puri Global Sukses Tbk,Real Estate,Real Estate Development,0
+PWON,PT Pakuwon Jati Tbk,Real Estate,Real Estate Development,0
+PYFA,PT Pyridam Farma Tbk,Health Technology,Pharmaceuticals: Major,0
+PZZA,PT Sarimelati Kencana Tbk,Consumer Services,Restaurants,0
+RAAM,PT Tripar Multivision Plus Tbk,Consumer Services,Movies/Entertainment,0
+RAJA,PT Rukun Raharja Tbk,Utilities,Gas Distributors,0
+RALS,PT Ramayana Lestari Sentosa Tbk,Retail Trade,Department Stores,0
+RANC,PT Supra Boga Lestari Tbk,Retail Trade,Food Retail,0
+RANS,PT Rans Entertainmen Indonesia Tbk,Commercial Services,Miscellaneous Commercial Services,0
+RATU,PT Raharja Energi Cepu Tbk,Miscellaneous,Miscellaneous,0
+RBMS,PT Ristia Bintang Mahkotasejati Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+RCCC,PT Utama Radar Cahaya Tbk,Electronic Technology,Aerospace & Defense,0
+RDTX,PT Roda Vivatex Tbk,Real Estate,Real Estate Development,0
+REAL,PT Repower Asia Indonesia Tbk,Real Estate,Real Estate Development,0
+RELF,PT Graha Mitra Asia Tbk,Real Estate,Real Estate Development,0
+RELI,PT Reliance Sekuritas Indonesia Tbk,Finance,Investment Banks/Brokers,1
+RGAS,PT Kian Santang Muliatama Tbk,Industrial Services,Engineering & Construction,0
+RICY,PT Ricky Putra Globalindo Tbk,Consumer Non-Durables,Apparel/Footwear,0
+RIGS,PT Rig Tenders Indonesia Tbk,Transportation,Marine Shipping,0
+RISE,PT Jaya Sukses Makmur Sentosa Tbk,Real Estate,Real Estate Development,0
+RLCO,PT Abadi Lestari Indonesia Tbk,Health Technology,Pharmaceuticals: Other,0
+RMKE,PT RMK Energy Tbk,Distribution Services,Wholesale Distributors,0
+RMKO,PT Royaltama Mulia Kontraktorindo Tbk,Energy Minerals,Coal,0
+ROCK,PT Rockfields Properti Indonesia Tbk,Real Estate,Real Estate Development,0
+RODA,PT Pikko Land Development Tbk,Consumer Durables,Homebuilding,0
+RONY,PT Aracord Nusantara Group Tbk,Industrial Services,Engineering & Construction,0
+ROTI,PT Nippon Indosari Corpindo Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+RSCH,PT Charlie Hospital Semarang Tbk,Health Services,Hospital/Nursing Management,0
+RSGK,PT Kedoya Adyaraya Tbk,Health Services,Hospital/Nursing Management,0
+RUIS,PT Radiant Utama Interinsco Tbk,Industrial Services,Oilfield Services/Equipment,0
+RUNS,PT Global Sukses Solusi Tbk,Technology Services,Packaged Software,0
+SAFE,PT Steady Safe Tbk,Transportation,Other Transportation,0
+SAGE,PT Saptausaha Gemilangindah Tbk,Real Estate,Real Estate Development,0
+SAME,PT Sarana Meditama Metropolitan Tbk,Health Services,Hospital/Nursing Management,0
+SAMF,PT Saraswanti Anugerah Makmur Tbk,Process Industries,Chemicals: Agricultural,0
+SAPX,PT Satria Antaran Prima Tbk,Transportation,Air Freight/Couriers,0
+SATU,PT Kota Satu Properti Tbk,Real Estate,Real Estate Development,0
+SBMA,PT Surya Biru Murni Acetylene Tbk,Process Industries,Chemicals: Specialty,0
+SCCO,PT Supreme Cable Manufacturing & Commerce Tbk,Producer Manufacturing,Electrical Products,0
+SCMA,PT Surya Citra Media Tbk,Consumer Services,Broadcasting,0
+SCNP,PT Selaras Citra Nusantara Perkasa Tbk,Consumer Durables,Electronics/Appliances,0
+SDMU,PT Sidomulyo Selaras Tbk,Transportation,Trucking,0
+SDPC,PT Millennium Pharmacon International Tbk,Distribution Services,Medical Distributors,0
+SDRA,PT Bank Woori Saudara Indonesia 1906 Tbk,Finance,Regional Banks,1
+SEMA,PT Semacom Integrated Tbk,Producer Manufacturing,Electrical Products,0
+SFAN,PT Surya Fajar Capital Tbk,Finance,Investment Managers,1
+SGER,PT Sumber Global Energy Tbk,Non-Energy Minerals,Other Metals/Minerals,0
+SGRO,PT Prime Agri Resources Tbk,Process Industries,Agricultural Commodities/Milling,0
+SHID,PT Hotel Sahid Jaya International Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+SHIP,PT Sillo Maritime Perdana Tbk,Transportation,Marine Shipping,0
+SICO,PT Sigma Energy Compressindo Tbk,Energy Minerals,Oil & Gas Production,0
+SIDO,PT Industri Jamu dan Farmasi Sido Muncul Tbk,Health Technology,Pharmaceuticals: Other,0
+SILO,PT Siloam International Hospitals Tbk Reg-S,Health Services,Hospital/Nursing Management,0
+SIMP,PT Salim Ivomas Pratama Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+SINI,PT Singaraja Putra Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+SIPD,PT Sreeya Sewu Indonesia Tbk Class A,Process Industries,Agricultural Commodities/Milling,0
+SKBM,PT Sekar Bumi Tbk,Consumer Non-Durables,Food: Meat/Fish/Dairy,0
+SKLT,PT Sekar Laut Tbk,Consumer Non-Durables,Food: Major Diversified,0
+SKRN,PT Superkrane Mitra Utama,Finance,Finance/Rental/Leasing,1
+SLIS,PT Gaya Abadi Sempurna Tbk,Distribution Services,Electronics Distributors,0
+SMAR,PT Sinar Mas Agro Resources & Technology Tbk,Process Industries,Agricultural Commodities/Milling,0
+SMBR,PT Semen Baturaja (Persero) Tbk Class B,Non-Energy Minerals,Construction Materials,0
+SMDM,PT Suryamas Dutamakmur Tbk,Real Estate,Real Estate Development,0
+SMDR,PT Samudera Indonesia Tbk,Transportation,Marine Shipping,0
+SMGA,PT Sumber Mineral Global Abadi Tbk,Distribution Services,Wholesale Distributors,0
+SMGR,PT Semen Indonesia (Persero) Tbk,Non-Energy Minerals,Construction Materials,0
+SMIL,PT Sarana Mitra Luas Tbk,Finance,Finance/Rental/Leasing,1
+SMKL,PT Satyamitra Kemas Lestari Tbk,Process Industries,Containers/Packaging,0
+SMKM,PT Sumber Mas Konstruksi Tbk,Industrial Services,Engineering & Construction,0
+SMLE,PT Sinergi Multi Lestarindo Tbk,Distribution Services,Wholesale Distributors,0
+SMMA,PT Sinar Mas Multiartha Tbk Class A,Finance,Property/Casualty Insurance,1
+SMMT,PT Golden Eagle Energy Tbk,Energy Minerals,Coal,0
+SMRA,PT Summarecon Agung Tbk,Real Estate,Real Estate Development,0
+SMSM,PT Selamat Sempurna Tbk,Producer Manufacturing,Auto Parts: OEM,0
+SNLK,PT Sunter Lakeside Hotel Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+SOCI,PT Soechi Lines Tbk,Transportation,Marine Shipping,0
+SOFA,PT Solusi Environment Asia Tbk,Non-Energy Minerals,Forest Products,0
+SOHO,PT Soho Global Health Tbk,Health Technology,Pharmaceuticals: Major,0
+SOLA,PT Xolare Rcr Energy Tbk,Industrial Services,Engineering & Construction,0
+SONA,PT Sona Topas Tourism Industry Tbk,Retail Trade,Specialty Stores,0
+SOSS,PT ALSOK Indonesia Services Tbk,Commercial Services,Personnel Services,0
+SOTS,PT Satria Mega Kencana Tbk,Consumer Services,Hotels/Resorts/Cruise lines,0
+SPMA,PT Suparma Tbk,Process Industries,Pulp & Paper,0
+SPRE,PT Soraya Berjaya Indonesia Tbk,Consumer Durables,Home Furnishings,0
+SPTO,PT Surya Pertiwi Tbk,Distribution Services,Wholesale Distributors,0
+SQMI,PT Wilton Makmur Indonesia Tbk,Non-Energy Minerals,Precious Metals,0
+SRAJ,PT Sejahteraraya Anugrahjaya Tbk,Health Services,Hospital/Nursing Management,0
+SRSN,PT Indo Acidatama Tbk,Consumer Non-Durables,Apparel/Footwear,0
+SRTG,PT Saratoga Investama Sedaya Tbk,Finance,Financial Conglomerates,1
+SSIA,PT Surya Semesta Internusa Tbk,Industrial Services,Engineering & Construction,0
+SSMS,PT Sawit Sumbermas Sarana Tbk,Process Industries,Agricultural Commodities/Milling,0
+SSTM,PT Sunson Textile Manufacturer Tbk,Process Industries,Textiles,0
+STAA,PT Sumber Tani Agung Resources Tbk,Process Industries,Agricultural Commodities/Milling,0
+STAR,PT Calculus Global Ventures Tbk,Finance,Investment Managers,1
+STRK,PT Lovina Beach Brewery Tbk,Consumer Non-Durables,Beverages: Alcoholic,0
+STTP,PT Siantar Top Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+SULI,PT SLJ Global Tbk,Non-Energy Minerals,Forest Products,0
+SUNI,PT Sunindo Pratama Tbk,Energy Minerals,Oil & Gas Production,0
+SUPA,PT Super Bank Indonesia Tbk,Finance,Regional Banks,1
+SURE,PT Super Energy Tbk,Energy Minerals,Oil Refining/Marketing,0
+SURI,PT Maja Agung Latexindo Tbk,Consumer Non-Durables,Apparel/Footwear,0
+SWID,PT Saraswanti Indoland Development Tbk,Real Estate,Real Estate Development,0
+TALF,PT Tunas Alfin Tbk,Process Industries,Containers/Packaging,0
+TAMA,PT Lancartama Sejati Tbk,Consumer Durables,Homebuilding,0
+TAMU,PT Pelayaran Tamarin Samudra Tbk,Transportation,Other Transportation,0
+TAPG,PT Triputra Agro Persada Tbk,Process Industries,Agricultural Commodities/Milling,0
+TARA,PT Agung Semesta Sejahtera Tbk,Real Estate,Real Estate Development,0
+TAXI,PT Express Transindo Utama Tbk,Transportation,Other Transportation,0
+TBIG,PT Tower Bersama Infrastructure Tbk,Real Estate,Real Estate Development,0
+TBLA,PT Tunas Baru Lampung Tbk,Process Industries,Agricultural Commodities/Milling,0
+TBMS,PT Tembaga Mulia Semanan Tbk,Producer Manufacturing,Metal Fabrication,0
+TCID,PT Mandom Indonesia Tbk,Consumer Non-Durables,Household/Personal Care,0
+TCPI,PT Transcoal Pacific,Transportation,Marine Shipping,0
+TEBE,PT Dana Brata Luhur Tbk,Industrial Services,Engineering & Construction,0
+TFAS,PT Telefast Indonesia Tbk,Technology Services,Packaged Software,0
+TGKA,PT Tigaraksa Satria Tbk,Distribution Services,Food Distributors,0
+TGUK,PT Platinum Wahab Nusantara Tbk,Consumer Services,Restaurants,0
+TIFA,PT KDB Tifa Finance Tbk,Finance,Finance/Rental/Leasing,1
+TINS,PT TIMAH (Persero) Tbk,Non-Energy Minerals,Other Metals/Minerals,0
+TIRA,PT Tira Austenite Tbk,Distribution Services,Wholesale Distributors,0
+TKIM,PT Pabrik Kertas Tjiwi Kimia Tbk,Process Industries,Pulp & Paper,0
+TLDN,PT Teladan Prima Agro Tbk,Process Industries,Agricultural Commodities/Milling,0
+TLKM,PT Telkom Indonesia (Persero) Tbk Class B,Communications,Wireless Telecommunications,0
+TMAS,PT Temas Tbk,Transportation,Marine Shipping,0
+TMPO,PT Tempo Inti Media Tbk,Consumer Services,Publishing: Newspapers,0
+TNCA,PT Trimuda Nuansa Citra Tbk,Transportation,Air Freight/Couriers,0
+TOBA,PT TBS Energi Utama Tbk,Industrial Services,Environmental Services,0
+TOOL,PT Rohartindo Nusantara Luas Tbk,Commercial Services,Miscellaneous Commercial Services,0
+TOSK,PT Topindo Solusi Komunika Tbk,Technology Services,Packaged Software,0
+TOTL,PT Total Bangun Persada Tbk,Industrial Services,Engineering & Construction,0
+TOTO,PT Surya Toto Indonesia Tbk,Producer Manufacturing,Building Products,0
+TOWR,PT Sarana Menara Nusantara Tbk,Finance,Finance/Rental/Leasing,1
+TPIA,PT Chandra Asri Pacific Tbk,Process Industries,Chemicals: Specialty,0
+TPMA,PT Trans Power Marine Tbk,Transportation,Marine Shipping,0
+TRGU,PT Cerestar Indonesia Tbk,Process Industries,Agricultural Commodities/Milling,0
+TRIM,PT Trimegah Sekuritas Indonesia Tbk,Finance,Investment Managers,1
+TRIN,PT Perintis Triniti Properti Tbk,Real Estate,Real Estate Development,0
+TRIS,PT Trisula International Tbk,Consumer Non-Durables,Apparel/Footwear,0
+TRJA,PT Transkon Jaya Tbk,Finance,Finance/Rental/Leasing,1
+TRON,PT Teknologi Karya Digital Nusa Tbk,Technology Services,Data Processing Services,0
+TRST,"PT Trias Sentosa, Tbk",Process Industries,Containers/Packaging,0
+TRUE,PT Triniti Dinamik Tbk,Real Estate,Real Estate Development,0
+TRUK,PT Guna Timur Raya Tbk,Transportation,Trucking,0
+TRUS,PT Trust Finance Indonesia Tbk,Finance,Finance/Rental/Leasing,1
+TSPC,PT Tempo Scan Pacific Tbk,Distribution Services,Medical Distributors,0
+TUGU,PT Asuransi Tugu Pratama Indonesia Tbk,Finance,Multi-Line Insurance,1
+TYRE,PT King Tire Indonesia Tbk,Consumer Durables,Automotive Aftermarket,0
+UANG,PT Pakuan Tbk,Real Estate,Real Estate Development,0
+UCID,PT Uni-Charm Indonesia Tbk,Consumer Non-Durables,Household/Personal Care,0
+UDNG,PT Agro Bahari Nusantara Tbk,Process Industries,Agricultural Commodities/Milling,0
+UFOE,PT Damai Sejahtera Abadi Tbk,Retail Trade,Electronics/Appliance Stores,0
+ULTJ,PT Ultrajaya Milk Industry & Trading Co. Tbk,Consumer Non-Durables,Food: Meat/Fish/Dairy,0
+UNIC,PT Unggul Indah Cahaya Tbk,Consumer Non-Durables,Household/Personal Care,0
+UNIQ,PT Ulima Nitra Tbk,Industrial Services,Engineering & Construction,0
+UNSP,PT Bakrie Sumatera Plantations Tbk,Distribution Services,Wholesale Distributors,0
+UNTD,PT Terang Dunia Internusa Tbk,Consumer Durables,Motor Vehicles,0
+UNTR,PT United Tractors Tbk,Energy Minerals,Coal,0
+UNVR,PT Unilever Indonesia Tbk,Consumer Non-Durables,Household/Personal Care,0
+URBN,PT Urban Jakarta Propertindo Tbk,Real Estate,Real Estate Development,0
+UVCR,PT Trimegah Karya Pratama Tbk,Technology Services,Packaged Software,0
+VAST,PT Vastland Indonesia Tbk,Real Estate,Real Estate Development,0
+VERN,PT Verona Indah Pictures Tbk,Consumer Services,Movies/Entertainment,0
+VICI,PT Victoria Care Indonesia Tbk,Consumer Non-Durables,Household/Personal Care,0
+VICO,PT Victoria Investama Tbk,Finance,Investment Banks/Brokers,1
+VINS,PT Victoria Insurance Tbk,Finance,Property/Casualty Insurance,1
+VISI,PT Satu Visi Putra Tbk,Distribution Services,Wholesale Distributors,0
+VIVA,PT Visi Media Asia Tbk Class A,Consumer Services,Broadcasting,0
+VKTR,PT VKTR Teknologi Mobilitas Tbk,Consumer Durables,Motor Vehicles,0
+VOKS,PT Voksel Electric Tbk,Producer Manufacturing,Electrical Products,0
+VRNA,PT Mizuho Leasing Indonesia Tbk,Finance,Finance/Rental/Leasing,1
+VTNY,PT Venteny Fortuna International Tbk,Technology Services,Information Technology Services,0
+WAPO,PT Wahana Pronatural Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+WBSA,PT BSA Logistics Indonesia Tbk,Transportation,Trucking,0
+WEGE,PT Wijaya Karya Bangunan Gedung Tbk,Industrial Services,Engineering & Construction,0
+WEHA,PT WEHA Transportasi Indonesia Tbk,Transportation,Other Transportation,0
+WGSH,PT Wira Global Solusi Tbk,Technology Services,Information Technology Services,0
+WIDI,PT Widiant Jaya Krenindo Tbk,Finance,Finance/Rental/Leasing,1
+WIFI,PT Solusi Sinergi Digital Tbk,Technology Services,Packaged Software,0
+WIIM,PT Wismilak Inti Makmur Tbk,Consumer Non-Durables,Tobacco,0
+WINE,PT Hatten Bali Tbk,Consumer Non-Durables,Beverages: Alcoholic,0
+WINR,PT Winner Nusantara Jaya Tbk,Real Estate,Real Estate Development,0
+WINS,PT Wintermar Offshore Marine Tbk,Transportation,Marine Shipping,0
+WIRG,PT WIR Asia Tbk,Health Services,Medical/Nursing Services,0
+WMPP,PT Widodo Makmur Perkasa Tbk,Process Industries,Agricultural Commodities/Milling,0
+WMUU,PT Widodo Makmur Unggas Tbk,Process Industries,Agricultural Commodities/Milling,0
+WOMF,PT Wahana Ottomitra Multiartha Tbk,Finance,Finance/Rental/Leasing,1
+WOOD,PT Integra Indocabinet Tbk,Consumer Durables,Home Furnishings,0
+WOWS,PT Ginting Jaya Energi Tbk,Industrial Services,Oilfield Services/Equipment,0
+WTON,PT Wijaya Karya Beton Tbk,Industrial Services,Engineering & Construction,0
+XCID,DIRE CIPTADANA PROPERTI RITEL INDONESIA,Real Estate,Real Estate Investment Trusts,0
+XCIS,Dana Investasi Real Estat Ciptadana Properti Perhotelan Padjajaran,Finance,Financial Conglomerates,1
+YELO,PT Yelooo Integra Datanet Tbk,Distribution Services,Electronics Distributors,0
+YOII,PT Asuransi Digital Bersama Tbk,Finance,Multi-Line Insurance,1
+YPAS,PT Yanaprima Hastapersada Tbk,Process Industries,Containers/Packaging,0
+YULE,PT Yulie Sekuritas Indonesia Tbk,Finance,Investment Banks/Brokers,1
+YUPI,Pt Yupi Indo Jelly Gum Tbk,Consumer Non-Durables,Food: Specialty/Candy,0
+ZATA,PT Bersama Zatta Jaya Tbk,Retail Trade,Apparel/Footwear Retail,0
+ZONE,PT Mega Perintis Tbk,Consumer Non-Durables,Apparel/Footwear,0
+ZYRX,PT Zyrexindo Mandiri Buana Tbk,Electronic Technology,Computer Processing Hardware,0
