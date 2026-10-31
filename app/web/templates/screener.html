@@ -2,7 +2,11 @@
 {% set active = 'screener' %}
 {% block title %}Screener · Papan Swing{% endblock %}
 {% block content %}
+{% if site_mode %}
+<form class="filters" id="filters" onsubmit="return false">
+{% else %}
 <form class="filters" hx-get="/" hx-target="#results" hx-trigger="change, input delay:300ms from:input[type=search]" hx-push-url="true">
+{% endif %}
   <label>Cari
     <input type="search" name="q" value="{{ q.q or '' }}" placeholder="Kode atau nama">
   </label>
@@ -42,3 +46,4 @@
 </form>
 <div id="results">{% include "partials/results.html" %}</div>
 {% endblock %}
+{% block scripts %}{% if site_mode %}<script src="{{ asset('filters.js') }}"></script>{% endif %}{% endblock %}

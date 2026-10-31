@@ -9,8 +9,14 @@
   <p>{{ total }} saham dinilai di scan terakhir, tapi tidak ada yang lolos filter ini. Longgarkan skor minimum atau setup.</p>
 </div>
 {% else %}
-<p class="count">{{ rows | length }} dari {{ total }} saham likuid</p>
-<div class="board-wrap">
+<p class="count"><span id="shown-count">{{ rows | length }}</span> dari {{ total }} saham likuid</p>
+{% if site_mode %}
+<div class="empty board-wrap" id="no-match" hidden>
+  <h2>Tidak ada yang cocok</h2>
+  <p>{{ total }} saham dinilai di scan terakhir, tapi tidak ada yang lolos filter ini. Longgarkan skor minimum atau setup.</p>
+</div>
+{% endif %}
+<div class="board-wrap" id="board">
 <table class="board">
   <thead><tr>
     <th>Saham</th><th class="n">Harga</th><th>Skor</th><th>Trend</th><th>Setup</th>
@@ -21,8 +27,12 @@
   <tbody>
   {% for r in rows %}
   {% set lad = ladder(r) %}
-  <tr onclick="location.href='/stock/{{ r.ticker }}'">
-    <td><a class="tick" href="/stock/{{ r.ticker }}">{{ r.ticker }}<small>{{ r.detail.name }}</small></a></td>
+  {% set href = page_url('stock', r.ticker) %}
+  <tr onclick="location.href='{{ href }}'"
+      data-ticker="{{ r.ticker }}" data-name="{{ r.detail.name | upper }}" data-score="{{ r.score }}"
+      data-setup="{{ r.setup_type or '' }}" data-trend="{{ r.trend }}" data-valuation="{{ r.valuation_label }}"
+      data-sector="{{ r.detail.sector or '' }}" data-rr="{{ r.rr if r.rr is not none else -9 }}" data-change="{{ r.change_pct or 0 }}">
+    <td><a class="tick" href="{{ href }}">{{ r.ticker }}<small>{{ r.detail.name }}</small></a></td>
     <td class="n">{{ r.close | price }}<br><small class="{{ 'up' if r.change_pct > 0 else ('down' if r.change_pct < 0 else 'muted') }}">{{ r.change_pct | pct }}</small></td>
     <td><div class="score"><b>{{ r.score }}</b><span class="cells {{ 'hi' if r.score >= 70 }}" aria-hidden="true">{% for i in range(10) %}<i class="{{ 'on' if r.score >= (i + 1) * 10 - 5 }}"></i>{% endfor %}</span></div></td>
     <td><span class="trend {{ r.trend }}">{{ r.trend }}</span></td>

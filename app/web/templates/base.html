@@ -7,17 +7,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Instrument+Sans:wght@400;600;700&family=Spline+Sans+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/app.css?v={{ static_v }}">
-  <script src="/static/vendor/htmx.min.js"></script>
+  <link rel="stylesheet" href="{{ asset('app.css') }}">
+  {% if not site_mode %}<script src="{{ asset('vendor/htmx.min.js') }}"></script>{% endif %}
 </head>
 <body>
 <header class="mast">
   <div class="mast-inner">
-    <a class="brand" href="/">Papan <span>Swing</span></a>
+    <a class="brand" href="{{ page_url('screener') }}">Papan <span>Swing</span></a>
     <nav class="tabs" aria-label="Halaman">
-      <a href="/" {% if active == 'screener' %}aria-current="page"{% endif %}>Screener</a>
-      <a href="/watchlist" {% if active == 'watchlist' %}aria-current="page"{% endif %}>Watchlist</a>
-      <a href="/backtest" {% if active == 'backtest' %}aria-current="page"{% endif %}>Backtest</a>
+      <a href="{{ page_url('screener') }}" {% if active == 'screener' %}aria-current="page"{% endif %}>Screener</a>
+      <a href="{{ page_url('watchlist') }}" {% if active == 'watchlist' %}aria-current="page"{% endif %}>Watchlist</a>
+      <a href="{{ page_url('backtest') }}" {% if active == 'backtest' %}aria-current="page"{% endif %}>Backtest</a>
     </nav>
     <div class="status">
       {% if scan %}
@@ -30,13 +30,17 @@
       {% elif last_attempt and last_attempt.status == 'failed' and (not scan or last_attempt.id > scan.id) %}
         <span class="err" title="{{ last_attempt.note }}">Scan terakhir gagal</span>
       {% endif %}
-      <span id="scan-box">{% with progress=progress %}{% include "partials/scan_status.html" %}{% endwith %}</span>
+      {% if site_mode %}
+        <span>Update otomatis tiap hari bursa 16:30 WIB{% if repo_url %} · <a href="{{ repo_url }}/actions">scan manual</a>{% endif %}</span>
+      {% else %}
+        <span id="scan-box">{% with progress=progress %}{% include "partials/scan_status.html" %}{% endwith %}</span>
+      {% endif %}
     </div>
   </div>
 </header>
 <main>
 {% block content %}{% endblock %}
-<p class="disclaimer">Alat bantu penyaring pribadi, bukan saran investasi. Skor dan level dihitung otomatis dari data harian (Yahoo Finance) dan fundamental (TradingView); selalu cek ulang di chart sebelum order di Stockbit.</p>
+<p class="disclaimer">Alat bantu penyaring pribadi, bukan saran investasi. Skor dan level dihitung otomatis dari data harian (Yahoo Finance) dan fundamental (TradingView); selalu cek ulang di chart sebelum order di Stockbit.{% if site_mode and built_at %} Halaman dibangun {{ built_at }}.{% endif %}</p>
 </main>
 {% block scripts %}{% endblock %}
 </body>

@@ -15,16 +15,18 @@
 {% block content %}
 <div class="d-head" style="margin-bottom:12px">
   <h1 style="font-size:48px">Backtest</h1>
+  {% if not site_mode %}
   <form method="post" action="/backtest/run">
     <button class="btn" {% if bt.running %}disabled{% endif %}>{{ 'Sedang berjalan…' if bt.running else 'Jalankan ulang' }}</button>
   </form>
   {% if bt.error %}<span class="err">{{ bt.error }}</span>{% endif %}
+  {% endif %}
 </div>
 <p class="explain">Mesin skor yang sama dijalankan ulang di setiap hari bursa 2 tahun terakhir, hanya memakai data sampai hari itu. Setiap sinyal Breakout/Pullback disimulasikan sebagai order limit di harga entry selama {{ run.params.horizon_bars if run else 20 }} hari:
   menang kalau TP1 tersentuh sebelum SL, kalah −1R kalau SL lebih dulu. Hasil sudah dipotong biaya transaksi {{ run.params.fee_pct | num(1) if run else '0,4' }}%.</p>
 
 {% if not run %}
-<div class="empty board-wrap"><h2>Belum ada backtest</h2><p>Butuh minimal satu scan selesai, lalu klik <b>Jalankan ulang</b> (±1 menit).</p></div>
+<div class="empty board-wrap"><h2>Belum ada backtest</h2><p>{% if site_mode %}Backtest dijalankan otomatis seminggu sekali setelah scan.{% else %}Butuh minimal satu scan selesai, lalu klik <b>Jalankan ulang</b> (±1 menit).{% endif %}</p></div>
 {% else %}
 {% set o = run.results.overall %}
 <div class="stat-grid" style="margin-top:20px">
@@ -55,7 +57,8 @@
   <thead><tr><th>Tanggal</th><th>Saham</th><th>Setup</th><th class="n">Skor</th><th>Trend</th><th class="n">R:R</th><th>Hasil</th><th class="n">R</th></tr></thead>
   <tbody>
   {% for s in run.results.signals[:60] %}
-    <tr onclick="location.href='/stock/{{ s.ticker }}'">
+    {% set href = page_url('stock', s.ticker) %}
+    <tr {% if href %}onclick="location.href='{{ href }}'"{% endif %}>
       <td>{{ s.date | date_id }}</td><td><b>{{ s.ticker }}</b></td><td>{{ s.setup }}</td><td class="n">{{ s.score }}</td>
       <td><span class="trend {{ s.trend }}">{{ s.trend }}</span></td><td class="n">{{ s.rr | num }}</td>
       <td><span class="status-pill {{ 'win' if s.outcome == 'win' else ('loss' if s.outcome == 'loss' else '') }}">{{ {'win': 'TP1', 'loss': 'SL', 'timeout': 'Timeout', 'no_fill': 'Tidak terisi'}[s.outcome] }}</span></td>

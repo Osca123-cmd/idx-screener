@@ -9,7 +9,7 @@ from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from app import backtest, config, indicators, jobs, scoring, store, universe, valuation, watch
+from app import backtest, chartdata, config, indicators, jobs, scoring, store, universe, valuation, watch
 from app.web import fmt
 
 HERE = Path(__file__).parent
@@ -17,8 +17,7 @@ app = FastAPI(title="IDX Screener")
 app.mount("/static", StaticFiles(directory=HERE / "static"), name="static")
 templates = Jinja2Templates(directory=HERE / "templates")
 fmt.register(templates.env)
-# cache-busting suffix for /static assets, changes whenever a static file changes
-templates.env.globals["static_v"] = int(max(f.stat().st_mtime for f in (HERE / "static").rglob("*") if f.is_file()))
+templates.env.globals.update(fmt.server_links())
 
 BACKTEST_STATE = {"running": False, "error": None}
 
@@ -148,18 +147,7 @@ def chart_data(ticker: str, bars: int = 260):
         conn.close()
     if df.empty:
         raise HTTPException(404, "no data")
-    dfi = indicators.add_all(df).iloc[-bars:]
-    t = [d.strftime("%Y-%m-%d") for d in dfi.index]
-
-    def series(col):
-        return [{"time": d, "value": round(float(v), 2)} for d, v in zip(t, dfi[col]) if v == v]
-
-    return JSONResponse({
-        "candles": [{"time": d, "open": r.open, "high": r.high, "low": r.low, "close": r.close}
-                    for d, r in zip(t, dfi.itertuples())],
-        "volume": [{"time": d, "value": r.volume, "up": r.close >= r.open} for d, r in zip(t, dfi.itertuples())],
-        "ema20": series("ema20"), "ema50": series("ema50"), "ema200": series("ema200"),
-    })
+    return JSONResponse(chartdata.payload(df, bars))
 
 
 # --- watchlist --------------------------------------------------------------

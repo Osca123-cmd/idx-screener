@@ -308,6 +308,8 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("weekly_fundamentals")
     bt = sub.add_parser("backtest")
     bt.add_argument("--tickers", help="comma separated (default: tickers in the latest scan)")
+    bt.add_argument("--max-age-days", type=float,
+                    help="skip when the latest backtest is younger than this (used by the scheduled workflow)")
     args = p.parse_args(argv)
     if args.log:
         _log_to_file(args.log)
@@ -324,6 +326,13 @@ def main(argv: list[str] | None = None) -> int:
         print(f"fundamentals updated for {weekly_fundamentals()} tickers ({time.time() - t0:.0f}s)")
     elif args.cmd == "backtest":
         from app import backtest
+        if args.max_age_days is not None:
+            conn = store.connect(config.get().database)
+            last = store.latest_backtest(conn)
+            conn.close()
+            if last and datetime.now() - datetime.fromisoformat(last["run_at"]) < timedelta(days=args.max_age_days):
+                print(f"backtest skipped: latest run {last['run_at']} is younger than {args.max_age_days:g} days")
+                return 0
         res = backtest.run(tickers=args.tickers.split(",") if args.tickers else None)
         print(backtest.summary_text(res))
         print(f"({time.time() - t0:.0f}s)")

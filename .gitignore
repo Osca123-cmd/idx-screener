@@ -7,3 +7,4 @@ data/screener.db
 data/screener.db-*
 data/*.lock
 logs/
+_site/

@@ -2,9 +2,21 @@
 
 Web pribadi untuk menyaring saham IDX yang berpotensi naik (swing harian), lengkap dengan
 setup entry / SL / TP bertahap dan label valuasi Undervalue / Wajar / Overvalue.
-Jalan lokal di laptop; order tetap dieksekusi manual di Stockbit (Stockbit tidak punya API publik).
+Order tetap dieksekusi manual di Stockbit (Stockbit tidak punya API publik).
 
-## Menjalankan
+**Versi online:** https://osca123-cmd.github.io/idx-screener/
+
+## Versi online (GitHub Pages)
+
+Workflow `.github/workflows/pages.yml` menjalankan scan di GitHub Actions setiap hari bursa 16:30 WIB,
+membangun situs statis (`python -m app.site`), lalu mempublikasikannya ke GitHub Pages.
+Backtest ikut dijalankan ulang seminggu sekali.
+
+- **Scan manual**: tab *Actions* → *Scan & publish* → *Run workflow* (centang *force* untuk scan ulang sesi yang sama).
+- **Watchlist** di versi online disimpan di browser masing-masing (localStorage), tidak sinkron antar perangkat.
+- Database SQLite dibawa antar-run lewat cache Actions; kalau cache hilang, scan berikutnya mengambil ulang 2 tahun data.
+
+## Menjalankan lokal
 
 ```bash
 python -m venv .venv

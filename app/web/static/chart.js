@@ -26,7 +26,7 @@
   const ema = (color, width) => chart.addLineSeries({ color, lineWidth: width, priceLineVisible: false, lastValueVisible: false, crosshairMarkerVisible: false });
   const e20 = ema("#2f6fb3", 1), e50 = ema("#8a5cc2", 1), e200 = ema(v("--muted"), 2);
 
-  fetch(`/api/chart/${el.dataset.ticker}`).then((r) => r.json()).then((d) => {
+  fetch(el.dataset.src || `/api/chart/${el.dataset.ticker}`).then((r) => r.json()).then((d) => {
     candles.setData(d.candles);
     vol.setData(d.volume.map((b) => ({ time: b.time, value: b.value, color: b.up ? v("--jade-soft") : v("--crimson-soft") })));
     e20.setData(d.ema20); e50.setData(d.ema50); e200.setData(d.ema200);

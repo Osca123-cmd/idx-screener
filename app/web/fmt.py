@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from datetime import datetime
+from pathlib import Path
 
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"]
 
@@ -75,6 +76,44 @@ def ladder(r: dict) -> dict | None:
         return round((v - lo) / span * 100, 2)
 
     return {k: x(r[k]) for k in ("sl", "zone_low", "zone_high", "entry", "tp1", "tp2", "close")}
+
+
+STATIC_DIR = Path(__file__).parent / "static"
+
+
+def static_version() -> int:
+    """Cache-busting suffix for static assets; changes whenever a static file changes."""
+    return int(max(f.stat().st_mtime for f in STATIC_DIR.rglob("*") if f.is_file()))
+
+
+def server_links() -> dict:
+    """URL helpers for the local FastAPI app."""
+    v = static_version()
+    pages = {"screener": "/", "watchlist": "/watchlist", "backtest": "/backtest"}
+
+    def page_url(kind: str, ticker: str | None = None) -> str:
+        if kind == "stock":
+            return f"/stock/{ticker}"
+        if kind == "chart":
+            return f"/api/chart/{ticker}"
+        return pages[kind]
+
+    return {"page_url": page_url, "asset": lambda p: f"/static/{p}?v={v}", "site_mode": False}
+
+
+def site_links(root: str, stock_pages: set[str]) -> dict:
+    """URL helpers for the static GitHub Pages build. root is '' or '../' depending on page depth."""
+    v = static_version()
+    pages = {"screener": "index.html", "watchlist": "watchlist.html", "backtest": "backtest.html"}
+
+    def page_url(kind: str, ticker: str | None = None) -> str | None:
+        if kind == "stock":
+            return f"{root}stock/{ticker}.html" if ticker in stock_pages else None
+        if kind == "chart":
+            return f"{root}data/chart/{ticker}.json"
+        return root + pages[kind]
+
+    return {"page_url": page_url, "asset": lambda p: f"{root}static/{p}?v={v}", "site_mode": True}
 
 
 def register(env) -> None:

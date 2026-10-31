@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% set active = 'watchlist' %}
+{% block title %}Watchlist · Papan Swing{% endblock %}
+{% block content %}
+<div class="empty board-wrap" id="wl-empty" hidden>
+  <h2>Watchlist kosong</h2>
+  <p>Buka saham dari screener lalu klik <b>Simpan plan ke watchlist</b>. Plan dibekukan pada tanggal itu, lalu tiap update dicek apakah entry, TP, atau SL sudah tersentuh.</p>
+</div>
+<div class="board-wrap" id="wl-board" hidden>
+<table class="board">
+  <thead><tr>
+    <th>Saham</th><th>Status</th><th class="n">Harga</th><th>Plan sejak</th><th>Setup</th>
+    <th class="n">Entry</th><th class="n">SL</th><th class="n">TP1</th><th class="n">TP2</th>
+    <th>Skor kini</th><th></th>
+  </tr></thead>
+  <tbody id="wl-rows"></tbody>
+</table>
+</div>
+<p class="explain">Watchlist disimpan di browser ini saja (tidak ikut ke perangkat lain). Status dihitung dari bar harian sesudah plan disimpan. Kalau SL dan TP tersentuh di bar yang sama, dianggap SL lebih dulu. Setelah TP1, stop dianggap pindah ke harga entry.</p>
+<script id="latest" type="application/json">{{ latest | tojson }}</script>
+<script id="links" type="application/json">{{ {"chart": page_url('chart', '__T__'), "stock": root ~ 'stock/__T__.html'} | tojson }}</script>
+{% endblock %}
+{% block scripts %}<script src="{{ asset('watch.js') }}"></script>{% endblock %}

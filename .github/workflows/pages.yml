@@ -1,0 +1,81 @@
+# Daily IDX scan on GitHub Actions, published to GitHub Pages.
+# The SQLite database (prices, scan history, valuation snapshots) is carried between runs in the Actions cache;
+# if the cache is ever evicted the next scan simply refetches 2 years of prices.
+name: Scan & publish
+
+on:
+  schedule:
+    - cron: "30 9 * * 1-5"   # 16:30 WIB (UTC+7), Monday–Friday
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Scan ulang walau tidak ada sesi baru"
+        type: boolean
+        default: false
+      backtest:
+        description: "Jalankan backtest sekarang"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: ["app/**", "config.yaml", "data/universe.csv", ".github/workflows/pages.yml"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -e .
+
+      - name: Restore database
+        uses: actions/cache/restore@v4
+        with:
+          path: data/screener.db*
+          key: screener-db-${{ github.run_id }}
+          restore-keys: screener-db-
+
+      - name: Daily scan
+        run: python -m app.jobs daily_scan ${{ (inputs.force || github.event_name == 'push') && '--force' || '' }}
+
+      - name: Backtest (weekly, or on request)
+        run: python -m app.jobs backtest ${{ !inputs.backtest && '--max-age-days 6' || '' }}
+
+      - name: Save database
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: data/screener.db*
+          key: screener-db-${{ github.run_id }}
+
+      - name: Build site
+        run: python -m app.site --out _site --repo-url "${{ github.server_url }}/${{ github.repository }}"
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

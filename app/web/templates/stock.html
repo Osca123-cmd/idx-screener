@@ -19,7 +19,7 @@
 <div class="d-grid">
   <section class="card">
     <h2>Chart harian</h2>
-    <div id="chart" data-ticker="{{ stock.ticker }}"
+    <div id="chart" data-ticker="{{ stock.ticker }}" data-src="{{ page_url('chart', stock.ticker) }}"
          data-plan='{{ {"entry": r.entry, "sl": r.sl, "tp1": r.tp1, "tp2": r.tp2, "zone_low": r.zone_low, "zone_high": r.zone_high} | tojson }}'
          data-zones='{{ r.detail.zones | tojson }}'></div>
     <div class="legend">
@@ -52,7 +52,10 @@
         {% if p.scale_in %}<dt>Entry bertahap</dt><dd>{% for s in p.scale_in %}{{ s.price | price }} ({{ (s.weight * 100) | int }}%){% if not loop.last %} · {% endif %}{% endfor %}</dd>{% endif %}
       </dl>
       <p style="margin:14px 0 0">
-        {% if watched %}
+        {% if site_mode %}
+          <button class="btn" id="watch-btn" data-ticker="{{ stock.ticker }}"
+            data-plan='{{ {"entry": r.entry, "sl": r.sl, "tp1": r.tp1, "tp2": r.tp2, "zone_low": r.zone_low, "zone_high": r.zone_high, "rr": r.rr, "setup_type": r.setup_type, "score": r.score, "as_of": scan_date, "name": stock.name} | tojson }}'>Simpan plan ke watchlist</button>
+        {% elif watched %}
           <form class="inline" method="post" action="/watchlist/{{ stock.ticker }}/delete"><button class="btn ghost">Hapus dari watchlist</button></form>
         {% elif not note %}
           <form class="inline" method="post" action="/watchlist/{{ stock.ticker }}"><button class="btn">Simpan plan ke watchlist</button></form>
@@ -113,6 +116,7 @@
 {% endif %}
 {% endblock %}
 {% block scripts %}
-<script src="/static/vendor/lightweight-charts.js"></script>
-<script src="/static/chart.js?v={{ static_v }}"></script>
+<script src="{{ asset('vendor/lightweight-charts.js') }}"></script>
+<script src="{{ asset('chart.js') }}"></script>
+{% if site_mode %}<script src="{{ asset('watch.js') }}"></script>{% endif %}
 {% endblock %}
