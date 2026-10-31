@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Papan Swing{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Instrument+Sans:wght@400;600;700&family=Spline+Sans+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/app.css">
+  <script src="/static/vendor/htmx.min.js"></script>
+</head>
+<body>
+<header class="mast">
+  <div class="mast-inner">
+    <a class="brand" href="/">Papan <span>Swing</span></a>
+    <nav class="tabs" aria-label="Halaman">
+      <a href="/" {% if active == 'screener' %}aria-current="page"{% endif %}>Screener</a>
+      <a href="/watchlist" {% if active == 'watchlist' %}aria-current="page"{% endif %}>Watchlist</a>
+      <a href="/backtest" {% if active == 'backtest' %}aria-current="page"{% endif %}>Backtest</a>
+    </nav>
+    <div class="status">
+      {% if scan %}
+        <span>Data <b>{{ scan.scan_date | date_id }}</b> · {{ scan.n_ok }} dinilai{% if scan.n_failed %} · <span class="err">{{ scan.n_failed }} gagal diambil</span>{% endif %}{% if scan.n_stale %} · {{ scan.n_stale }} basi{% endif %}</span>
+      {% else %}
+        <span>Belum ada scan</span>
+      {% endif %}
+      {% if last_attempt and last_attempt.status == 'no_session' and (not scan or last_attempt.id > scan.id) %}
+        <span title="{{ last_attempt.note }}">Scan terakhir: tidak ada sesi baru</span>
+      {% elif last_attempt and last_attempt.status == 'failed' and (not scan or last_attempt.id > scan.id) %}
+        <span class="err" title="{{ last_attempt.note }}">Scan terakhir gagal</span>
+      {% endif %}
+      <span id="scan-box">{% with progress=progress %}{% include "partials/scan_status.html" %}{% endwith %}</span>
+    </div>
+  </div>
+</header>
+<main>
+{% block content %}{% endblock %}
+<p class="disclaimer">Alat bantu penyaring pribadi, bukan saran investasi. Skor dan level dihitung otomatis dari data harian (Yahoo Finance) dan fundamental (TradingView); selalu cek ulang di chart sebelum order di Stockbit.</p>
+</main>
+{% block scripts %}{% endblock %}
+</body>
+</html>

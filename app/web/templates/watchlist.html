@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% set active = 'watchlist' %}
+{% block title %}Watchlist · Papan Swing{% endblock %}
+{% block content %}
+{% if not items %}
+<div class="empty board-wrap">
+  <h2>Watchlist kosong</h2>
+  <p>Buka saham dari screener lalu klik <b>Simpan plan ke watchlist</b>. Plan dibekukan pada tanggal itu, lalu tiap scan dicek apakah entry, TP, atau SL sudah tersentuh.</p>
+</div>
+{% else %}
+<div class="board-wrap">
+<table class="board">
+  <thead><tr>
+    <th>Saham</th><th>Status</th><th class="n">Harga</th><th>Plan sejak</th><th>Setup</th>
+    <th class="n">Entry</th><th class="n">SL</th><th class="n">TP1</th><th class="n">TP2</th>
+    <th>Skor kini</th><th></th>
+  </tr></thead>
+  <tbody>
+  {% for w in items %}
+  {% set s = w.status.status %}
+  <tr>
+    <td><a class="tick" href="/stock/{{ w.ticker }}">{{ w.ticker }}<small>{{ w.stock.name if w.stock else '' }}</small></a></td>
+    <td><span class="status-pill {{ 'win' if s.startswith('TP') else ('loss' if s in ('SL kena', 'Zona invalid') else ('live' if s == 'Entry tersentuh' else '')) }}">{{ s }}</span>
+      {% if w.status.date %}<br><small class="muted">{{ w.status.date | date_id }}</small>{% endif %}</td>
+    <td class="n">{{ w.close | price }}</td>
+    <td>{{ w.plan.as_of | date_id }}</td>
+    <td>{{ w.plan.setup_type }}</td>
+    <td class="n">{{ w.plan.entry | price }}</td>
+    <td class="n down">{{ w.plan.sl | price }}</td>
+    <td class="n">{{ w.plan.tp1 | price }}</td>
+    <td class="n muted">{{ w.plan.tp2 | price }}</td>
+    <td>{% if w.latest %}<b class="mono">{{ w.latest.score }}</b> <span class="trend {{ w.latest.trend }}">{{ w.latest.trend }}</span>{% else %}<span class="muted">tidak di scan</span>{% endif %}</td>
+    <td><form class="inline" method="post" action="/watchlist/{{ w.ticker }}/delete"><button class="btn ghost">Hapus</button></form></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+<p class="explain">Status dihitung dari bar harian sesudah plan disimpan. Kalau SL dan TP tersentuh di bar yang sama, dianggap SL lebih dulu. Setelah TP1, stop dianggap pindah ke harga entry.</p>
+{% endif %}
+{% endblock %}

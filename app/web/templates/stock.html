@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% set active = 'screener' %}
+{% block title %}{{ stock.ticker }} · Papan Swing{% endblock %}
+{% block content %}
+<div class="d-head">
+  <h1>{{ stock.ticker }}</h1>
+  {% if r %}<span class="px">{{ r.close | price }}</span>
+  <span class="{{ 'up' if r.change_pct > 0 else ('down' if r.change_pct < 0 else 'muted') }} mono">{{ r.change_pct | pct }}</span>{% endif %}
+</div>
+<div class="d-sub">{{ stock.name }} · {{ stock.sector }} · {{ stock.industry }}</div>
+
+{% if note %}<div class="note">{{ note }}</div>{% endif %}
+
+{% if not r %}
+  <div class="empty card"><h2>Belum ada data</h2><p>Jalankan scan agar harga saham ini diambil.</p></div>
+{% else %}
+<div class="verdict {{ r.trend }}">Trend harian: {{ r.trend }}</div>
+
+<div class="d-grid">
+  <section class="card">
+    <h2>Chart harian</h2>
+    <div id="chart" data-ticker="{{ stock.ticker }}"
+         data-plan='{{ {"entry": r.entry, "sl": r.sl, "tp1": r.tp1, "tp2": r.tp2, "zone_low": r.zone_low, "zone_high": r.zone_high} | tojson }}'
+         data-zones='{{ r.detail.zones | tojson }}'></div>
+    <div class="legend">
+      <span><i style="background:#2f6fb3"></i>EMA20</span>
+      <span><i style="background:#8a5cc2"></i>EMA50</span>
+      <span><i style="background:var(--muted)"></i>EMA200</span>
+      <span><i style="background:var(--jade)"></i>Demand zone / entry</span>
+      <span><i style="background:var(--crimson)"></i>SL</span>
+      <span><i style="background:var(--amber)"></i>TP1 / TP2</span>
+    </div>
+  </section>
+
+  <aside class="card">
+    <h2>Plan</h2>
+    {% set p = r.detail.plan %}
+    {% if r.setup_type %}
+      <div class="plan-type">{{ r.setup_type }}</div>
+      <div class="plan-detail">{{ r.detail.setup.detail }}</div>
+      <div class="vladder">
+        <div class="tp"><span class="k">TP2</span><span class="muted">{{ KIND_TEXT.get(p.tp2_kind, '') }} · target lanjutan</span><span class="v">{{ r.tp2 | price }}</span></div>
+        <div class="tp"><span class="k">TP1</span><span class="muted">{{ KIND_TEXT.get(p.tp1_kind, '') }} · ambil sebagian</span><span class="v">{{ r.tp1 | price }}</span></div>
+        {% if r.close > r.entry %}<div class="now"><span class="k">Harga</span><span></span><span class="v">{{ r.close | price }}</span></div>{% endif %}
+        <div class="en zn"><span class="k">Zona</span><span class="muted">demand / retest</span><span class="v">{{ r.zone_low | price }}–{{ r.zone_high | price }}</span></div>
+        <div class="en"><span class="k">Entry</span><span class="muted">limit</span><span class="v">{{ r.entry | price }}</span></div>
+        {% if r.close <= r.entry %}<div class="now"><span class="k">Harga</span><span></span><span class="v">{{ r.close | price }}</span></div>{% endif %}
+        <div class="sl"><span class="k">SL</span><span class="muted">−{{ p.risk_pct | num(1) }}%</span><span class="v">{{ r.sl | price }}</span></div>
+      </div>
+      <dl class="kv">
+        <dt>R:R ke TP1</dt><dd>{{ r.rr | num }}</dd>
+        {% if p.scale_in %}<dt>Entry bertahap</dt><dd>{% for s in p.scale_in %}{{ s.price | price }} ({{ (s.weight * 100) | int }}%){% if not loop.last %} · {% endif %}{% endfor %}</dd>{% endif %}
+      </dl>
+      <p style="margin:14px 0 0">
+        {% if watched %}
+          <form class="inline" method="post" action="/watchlist/{{ stock.ticker }}/delete"><button class="btn ghost">Hapus dari watchlist</button></form>
+        {% elif not note %}
+          <form class="inline" method="post" action="/watchlist/{{ stock.ticker }}"><button class="btn">Simpan plan ke watchlist</button></form>
+        {% endif %}
+      </p>
+    {% else %}
+      <p class="muted">Belum ada setup: tidak ada breakout, tidak ada demand zone valid di bawah harga.</p>
+    {% endif %}
+  </aside>
+</div>
+
+<div class="row3">
+  <section class="card">
+    <h2>Checklist skor</h2>
+    <ul class="checklist">
+      {% for i in r.detail.checklist %}
+      <li class="{{ 'ok' if i.ok else 'no' }}"><span class="mark">{{ '✓' if i.ok else '✗' }}</span>
+        <span>{{ i.label }}<small>{{ i.detail }}</small></span><span class="pts">{{ i.points }}/{{ i.max }}</span></li>
+      {% endfor %}
+    </ul>
+    <div class="total"><span>Skor</span><b>{{ r.score }}</b></div>
+  </section>
+
+  <section class="card">
+    <h2>Valuasi</h2>
+    {% set v = r.detail.valuation %}
+    <p><span class="val {{ r.valuation_label }}">{{ r.valuation_label }}</span></p>
+    <p style="font-size:14px">{{ r.valuation_reason }}</p>
+    {% if v.history_note %}<p style="font-size:14px">{{ v.history_note | capitalize }}.</p>{% endif %}
+    <dl class="kv">
+      <dt>PER</dt><dd>{{ v.per | num(1) }}</dd>
+      <dt>PBV</dt><dd>{{ v.pbv | num(2) }}</dd>
+      <dt>Rasio vs acuan</dt><dd>{{ v.ratio | num(2) }}</dd>
+      <dt>Graham Number</dt><dd>{{ v.graham | price }}</dd>
+      <dt>Margin of safety</dt><dd>{{ v.graham_mos | pct if v.graham_mos is not none else '–' }}</dd>
+    </dl>
+    <p class="muted" style="font-size:12px;margin-bottom:0">Undervalue &lt; 0,75 × acuan · Overvalue &gt; 1,25 ×. Bank & asuransi dinilai dari PBV saja.</p>
+  </section>
+
+  <section class="card">
+    <h2>Catatan risiko</h2>
+    {% if r.flags %}
+    <ul class="flaglist">
+      {% for f in r.flags %}{% set ft = flag(f) %}<li><b>{{ ft[0] }}.</b> {{ ft[1] }}</li>{% endfor %}
+    </ul>
+    {% else %}<p class="muted">Tidak ada catatan khusus.</p>{% endif %}
+    {% if history | length > 1 %}
+    <h2 style="margin-top:18px">Skor {{ history | length }} scan terakhir</h2>
+    {% set n = history | length %}
+    <svg class="spark" viewBox="0 0 {{ (n - 1) * 10 }} 100" preserveAspectRatio="none" role="img" aria-label="Riwayat skor">
+      <polyline fill="none" stroke="var(--jade)" stroke-width="2" vector-effect="non-scaling-stroke"
+        points="{% for h in history %}{{ loop.index0 * 10 }},{{ 100 - h.score }} {% endfor %}"/>
+    </svg>
+    <p class="muted mono" style="font-size:12px;margin:0">{{ history[0].scan_date | date_id }} → {{ history[-1].scan_date | date_id }}: {{ history[0].score }} → {{ history[-1].score }}</p>
+    {% endif %}
+  </section>
+</div>
+{% endif %}
+{% endblock %}
+{% block scripts %}
+<script src="/static/vendor/lightweight-charts.js"></script>
+<script src="/static/chart.js"></script>
+{% endblock %}

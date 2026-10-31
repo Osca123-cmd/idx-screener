@@ -1,0 +1,54 @@
+{% if not total %}
+<div class="empty board-wrap">
+  <h2>Papan masih kosong</h2>
+  <p>Jalankan scan pertama dengan tombol <b>Scan sekarang</b> di kanan atas. Scan pertama mengambil 2 tahun data untuk ±840 saham, sekitar 1–2 menit.</p>
+</div>
+{% elif not rows %}
+<div class="empty board-wrap">
+  <h2>Tidak ada yang cocok</h2>
+  <p>{{ total }} saham dinilai di scan terakhir, tapi tidak ada yang lolos filter ini. Longgarkan skor minimum atau setup.</p>
+</div>
+{% else %}
+<p class="count">{{ rows | length }} dari {{ total }} saham likuid</p>
+<div class="board-wrap">
+<table class="board">
+  <thead><tr>
+    <th>Saham</th><th class="n">Harga</th><th>Skor</th><th>Trend</th><th>Setup</th>
+    <th title="SL · zona entry · harga sekarang (▼) · TP1 · TP2">Tangga</th>
+    <th class="n">Entry</th><th class="n">SL</th><th class="n">TP1</th><th class="n">TP2</th><th class="n">R:R</th>
+    <th>Valuasi</th><th>Catatan</th>
+  </tr></thead>
+  <tbody>
+  {% for r in rows %}
+  {% set lad = ladder(r) %}
+  <tr onclick="location.href='/stock/{{ r.ticker }}'">
+    <td><a class="tick" href="/stock/{{ r.ticker }}">{{ r.ticker }}<small>{{ r.detail.name }}</small></a></td>
+    <td class="n">{{ r.close | price }}<br><small class="{{ 'up' if r.change_pct > 0 else ('down' if r.change_pct < 0 else 'muted') }}">{{ r.change_pct | pct }}</small></td>
+    <td><div class="score"><b>{{ r.score }}</b><span class="cells {{ 'hi' if r.score >= 70 }}" aria-hidden="true">{% for i in range(10) %}<i class="{{ 'on' if r.score >= (i + 1) * 10 - 5 }}"></i>{% endfor %}</span></div></td>
+    <td><span class="trend {{ r.trend }}">{{ r.trend }}</span></td>
+    <td><span class="setup {{ 'live' if r.setup_type in ('Breakout', 'Pullback') }}">{{ r.setup_type or '–' }}</span></td>
+    <td>{% if lad %}
+      <div class="ladder" role="img" aria-label="SL {{ r.sl | price }}, entry {{ r.entry | price }}, harga {{ r.close | price }}, TP1 {{ r.tp1 | price }}, TP2 {{ r.tp2 | price }}">
+        <span class="rail"></span>
+        <span class="risk" style="left: {{ lad.sl }}%; width: {{ lad.entry - lad.sl }}%"></span>
+        <span class="reward" style="left: {{ lad.entry }}%; width: {{ lad.tp1 - lad.entry }}%"></span>
+        <span class="zone" style="left: {{ lad.zone_low }}%; width: {{ [lad.zone_high - lad.zone_low, 1] | max }}%"></span>
+        <span class="m sl" style="left: {{ lad.sl }}%"></span>
+        <span class="m en" style="left: {{ lad.entry }}%"></span>
+        <span class="m t1" style="left: {{ lad.tp1 }}%"></span>
+        <span class="m t2" style="left: {{ lad.tp2 }}%"></span>
+        <span class="now" style="left: {{ lad.close }}%"></span>
+      </div>{% else %}<span class="muted">–</span>{% endif %}</td>
+    <td class="n">{{ r.entry | price }}</td>
+    <td class="n down">{{ r.sl | price }}</td>
+    <td class="n">{{ r.tp1 | price }}</td>
+    <td class="n muted">{{ r.tp2 | price }}</td>
+    <td class="n">{{ r.rr | num }}</td>
+    <td><span class="val {{ r.valuation_label }}" title="{{ r.valuation_reason }}">{{ r.valuation_label }}</span></td>
+    <td><div class="flags">{% for f in r.flags %}{% set ft = flag(f) %}<span class="flag" title="{{ ft[1] }}">{{ ft[0] }}</span>{% endfor %}</div></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}

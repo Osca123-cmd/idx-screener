@@ -1,0 +1,9 @@
+{% if progress.running %}
+<span class="progress" hx-get="/scan/status?polling=1" hx-trigger="every 1s" hx-target="#scan-box" hx-swap="innerHTML">
+  <span>{{ progress.stage }}{% if progress.total %} {{ progress.done }}/{{ progress.total }}{% endif %}</span>
+  <span class="bar"><i style="width: {{ (progress.done / progress.total * 100) if progress.total else 5 }}%"></i></span>
+</span>
+{% else %}
+  {% if progress.error %}<span class="err">{{ progress.error }}</span>{% endif %}
+  <button class="btn" hx-post="/scan" hx-target="#scan-box" hx-swap="innerHTML">Scan sekarang</button>
+{% endif %}

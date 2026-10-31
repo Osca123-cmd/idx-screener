@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% set active = 'backtest' %}
+{% block title %}Backtest · Papan Swing{% endblock %}
+{% macro row(name, s) %}
+<tr>
+  <td><b>{{ name }}</b></td>
+  <td class="n">{{ s.n }}</td>
+  <td class="n">{{ s.fill_rate | num(1) }}%</td>
+  <td class="n">{{ s.win_rate | num(1) }}{% if s.win_rate is not none %}%{% endif %}</td>
+  <td class="n {{ 'up' if (s.avg_r or 0) > 0 else 'down' }}">{{ s.avg_r | num(3) }}</td>
+  <td class="n">{{ s.losses }}</td>
+  <td class="n">{{ s.timeouts }}</td>
+</tr>
+{% endmacro %}
+{% block content %}
+<div class="d-head" style="margin-bottom:12px">
+  <h1 style="font-size:48px">Backtest</h1>
+  <form method="post" action="/backtest/run">
+    <button class="btn" {% if bt.running %}disabled{% endif %}>{{ 'Sedang berjalan…' if bt.running else 'Jalankan ulang' }}</button>
+  </form>
+  {% if bt.error %}<span class="err">{{ bt.error }}</span>{% endif %}
+</div>
+<p class="explain">Mesin skor yang sama dijalankan ulang di setiap hari bursa 2 tahun terakhir, hanya memakai data sampai hari itu. Setiap sinyal Breakout/Pullback disimulasikan sebagai order limit di harga entry selama {{ run.params.horizon_bars if run else 20 }} hari:
+  menang kalau TP1 tersentuh sebelum SL, kalah −1R kalau SL lebih dulu. Hasil sudah dipotong biaya transaksi {{ run.params.fee_pct | num(1) if run else '0,4' }}%.</p>
+
+{% if not run %}
+<div class="empty board-wrap"><h2>Belum ada backtest</h2><p>Butuh minimal satu scan selesai, lalu klik <b>Jalankan ulang</b> (±1 menit).</p></div>
+{% else %}
+{% set o = run.results.overall %}
+<div class="stat-grid" style="margin-top:20px">
+  <div class="card"><div class="st-name">Sinyal</div><div class="st-big">{{ o.n }}</div><div class="muted">{{ run.params.tickers }} saham · terisi {{ o.fill_rate | num(1) }}%</div></div>
+  <div class="card"><div class="st-name">TP1 sebelum SL</div><div class="st-big">{{ o.win_rate | num(1) }}%</div><div class="muted">dari trade yang terisi</div></div>
+  <div class="card"><div class="st-name">Rata-rata hasil</div><div class="st-big {{ 'up' if o.avg_r > 0 else 'down' }}">{{ o.avg_r | num(3) }} R</div><div class="muted">per trade, setelah biaya</div></div>
+</div>
+<p class="explain"><b>Cara membaca:</b> win rate tinggi tapi rata-rata R kecil berarti TP1 sering kena tapi letaknya dekat. Yang menentukan untung-rugi jangka panjang adalah kolom <b>Rata-rata R</b>; di bawah ~0,1R hasilnya rapuh terhadap slippage.</p>
+
+<div class="board-wrap" style="margin-top:16px">
+<table class="board" style="min-width:640px">
+  <thead><tr><th>Kelompok</th><th class="n">Sinyal</th><th class="n">Terisi</th><th class="n">Win rate</th><th class="n">Rata-rata R</th><th class="n">Kalah</th><th class="n">Timeout</th></tr></thead>
+  <tbody>
+    <tr><td colspan="7" class="muted" style="font-size:11px;text-transform:uppercase;letter-spacing:.06em">Per setup</td></tr>
+    {% for k, s in run.results.by_setup.items() %}{{ row(k, s) }}{% endfor %}
+    <tr><td colspan="7" class="muted" style="font-size:11px;text-transform:uppercase;letter-spacing:.06em">Per skor saat sinyal</td></tr>
+    {% for k, s in run.results.by_score.items() %}{{ row(k, s) }}{% endfor %}
+    <tr><td colspan="7" class="muted" style="font-size:11px;text-transform:uppercase;letter-spacing:.06em">Per trend saat sinyal</td></tr>
+    {% for k, s in run.results.by_trend.items() %}{{ row(k, s) }}{% endfor %}
+  </tbody>
+</table>
+</div>
+<p class="muted" style="font-size:13px">Dijalankan {{ run.run_at | date_id }}. Catatan: universe = saham yang sekarang tercatat & likuid, jadi saham yang sudah delisting tidak ikut (bias survivorship — hasil nyata cenderung sedikit lebih buruk).</p>
+
+<h2 style="font:700 20px var(--display);text-transform:uppercase;margin-top:28px">Sinyal terbaru</h2>
+<div class="board-wrap">
+<table class="board" style="min-width:640px">
+  <thead><tr><th>Tanggal</th><th>Saham</th><th>Setup</th><th class="n">Skor</th><th>Trend</th><th class="n">R:R</th><th>Hasil</th><th class="n">R</th></tr></thead>
+  <tbody>
+  {% for s in run.results.signals[:60] %}
+    <tr onclick="location.href='/stock/{{ s.ticker }}'">
+      <td>{{ s.date | date_id }}</td><td><b>{{ s.ticker }}</b></td><td>{{ s.setup }}</td><td class="n">{{ s.score }}</td>
+      <td><span class="trend {{ s.trend }}">{{ s.trend }}</span></td><td class="n">{{ s.rr | num }}</td>
+      <td><span class="status-pill {{ 'win' if s.outcome == 'win' else ('loss' if s.outcome == 'loss' else '') }}">{{ {'win': 'TP1', 'loss': 'SL', 'timeout': 'Timeout', 'no_fill': 'Tidak terisi'}[s.outcome] }}</span></td>
+      <td class="n {{ 'up' if s.r > 0 else ('down' if s.r < 0 else '') }}">{{ s.r | num(2) }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+{% endblock %}

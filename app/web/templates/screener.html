@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% set active = 'screener' %}
+{% block title %}Screener · Papan Swing{% endblock %}
+{% block content %}
+<form class="filters" hx-get="/" hx-target="#results" hx-trigger="change, input delay:300ms from:input[type=search]" hx-push-url="true">
+  <label>Cari
+    <input type="search" name="q" value="{{ q.q or '' }}" placeholder="Kode atau nama">
+  </label>
+  <label>Skor min
+    <select name="min_score">
+      {% for v in ['', '40', '50', '60', '70', '80'] %}<option value="{{ v }}" {% if q.min_score == v %}selected{% endif %}>{{ v or 'Semua' }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Setup
+    <select name="setup">
+      {% for v, t in [('', 'Semua'), ('triggered', 'Sinyal aktif'), ('Breakout', 'Breakout'), ('Pullback', 'Pullback'), ('Menunggu pullback', 'Menunggu pullback')] %}
+      <option value="{{ v }}" {% if q.setup == v %}selected{% endif %}>{{ t }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Trend
+    <select name="trend">
+      {% for v in ['', 'NAIK', 'SIDEWAYS', 'TURUN'] %}<option value="{{ v }}" {% if q.trend == v %}selected{% endif %}>{{ v or 'Semua' }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Valuasi
+    <select name="valuation">
+      {% for v in ['', 'Undervalue', 'Wajar', 'Overvalue', 'N/A (rugi)', 'Data tidak tersedia'] %}<option value="{{ v }}" {% if q.valuation == v %}selected{% endif %}>{{ v or 'Semua' }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Sektor
+    <select name="sector">
+      <option value="">Semua</option>
+      {% for s in sectors %}<option value="{{ s }}" {% if q.sector == s %}selected{% endif %}>{{ s }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Urutkan
+    <select name="sort">
+      {% for v, t in [('score', 'Skor'), ('rr', 'R:R'), ('change', '% hari ini'), ('ticker', 'Kode')] %}
+      <option value="{{ v }}" {% if (q.sort or 'score') == v %}selected{% endif %}>{{ t }}</option>{% endfor %}
+    </select>
+  </label>
+</form>
+<div id="results">{% include "partials/results.html" %}</div>
+{% endblock %}

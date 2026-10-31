@@ -66,8 +66,7 @@ class FakeFunds:
         return base
 
 
-@pytest.fixture
-def cfg(tmp_path):
+def make_cfg(tmp_path):
     c = config.load()
     c.database = str(tmp_path / "s.db")
     c.universe = str(tmp_path / "u.csv")
@@ -77,6 +76,11 @@ def cfg(tmp_path):
         rows.append(f"{t},PT {t},{sector},{'Major Banks' if t == 'BANK' else 'x'},{1 if t == 'BANK' else 0}")
     (tmp_path / "u.csv").write_text("\n".join(rows) + "\n")
     return c
+
+
+@pytest.fixture
+def cfg(tmp_path):
+    return make_cfg(tmp_path)
 
 
 def run(cfg, now=datetime(2026, 10, 30, 17, 0, tzinfo=JKT), **kw):
