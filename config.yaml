@@ -52,6 +52,7 @@ valuation:
 
 backtest:
   horizon_bars: 20
+  fee_pct: 0.4             # biaya beli+jual broker & pajak (% dari nilai), dikurangkan dari R
   warmup_bars: 200
   step: 1
 
